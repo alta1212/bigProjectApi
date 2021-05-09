@@ -1,0 +1,270 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/tuan/Màn hình nền/bigProjectApi-main/main/main.csproj": {}
+  },
+  "projects": {
+    "/home/tuan/Màn hình nền/bigProjectApi-main/BUS/BUS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tuan/Màn hình nền/bigProjectApi-main/BUS/BUS.csproj",
+        "projectName": "BUS",
+        "projectPath": "/home/tuan/Màn hình nền/bigProjectApi-main/BUS/BUS.csproj",
+        "packagesPath": "/home/tuan/.nuget/packages/",
+        "outputPath": "/home/tuan/Màn hình nền/bigProjectApi-main/BUS/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tuan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/tuan/Màn hình nền/bigProjectApi-main/DAL/DAL.csproj": {
+                "projectPath": "/home/tuan/Màn hình nền/bigProjectApi-main/DAL/DAL.csproj"
+              },
+              "/home/tuan/Màn hình nền/bigProjectApi-main/Models/Models.csproj": {
+                "projectPath": "/home/tuan/Màn hình nền/bigProjectApi-main/Models/Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.DataProtection": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/tuan/Màn hình nền/bigProjectApi-main/DAL/DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tuan/Màn hình nền/bigProjectApi-main/DAL/DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "/home/tuan/Màn hình nền/bigProjectApi-main/DAL/DAL.csproj",
+        "packagesPath": "/home/tuan/.nuget/packages/",
+        "outputPath": "/home/tuan/Màn hình nền/bigProjectApi-main/DAL/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tuan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/tuan/Màn hình nền/bigProjectApi-main/Models/Models.csproj": {
+                "projectPath": "/home/tuan/Màn hình nền/bigProjectApi-main/Models/Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/tuan/Màn hình nền/bigProjectApi-main/Models/Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tuan/Màn hình nền/bigProjectApi-main/Models/Models.csproj",
+        "projectName": "Models",
+        "projectPath": "/home/tuan/Màn hình nền/bigProjectApi-main/Models/Models.csproj",
+        "packagesPath": "/home/tuan/.nuget/packages/",
+        "outputPath": "/home/tuan/Màn hình nền/bigProjectApi-main/Models/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tuan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/tuan/Màn hình nền/bigProjectApi-main/main/main.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tuan/Màn hình nền/bigProjectApi-main/main/main.csproj",
+        "projectName": "main",
+        "projectPath": "/home/tuan/Màn hình nền/bigProjectApi-main/main/main.csproj",
+        "packagesPath": "/home/tuan/.nuget/packages/",
+        "outputPath": "/home/tuan/Màn hình nền/bigProjectApi-main/main/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tuan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/tuan/Màn hình nền/bigProjectApi-main/BUS/BUS.csproj": {
+                "projectPath": "/home/tuan/Màn hình nền/bigProjectApi-main/BUS/BUS.csproj"
+              },
+              "/home/tuan/Màn hình nền/bigProjectApi-main/DAL/DAL.csproj": {
+                "projectPath": "/home/tuan/Màn hình nền/bigProjectApi-main/DAL/DAL.csproj"
+              },
+              "/home/tuan/Màn hình nền/bigProjectApi-main/Models/Models.csproj": {
+                "projectPath": "/home/tuan/Màn hình nền/bigProjectApi-main/Models/Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.5, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
