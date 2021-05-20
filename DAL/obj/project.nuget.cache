@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S26T+xwuWwyZO1HjZI09oZ4DNSIhX0r/sz1i0YpCKBLusNTiWNOoa6Nd4h3wkYWkX0Jmha2z8wl5Z1ZhWdY7PA==",
+  "dgSpecHash": "bwl9XpfVYYvpeWPHTMqlE+ySCDGXAYa9QqIqacJTj77ckpKxBtq4eyh7dEB3YyrXfz5Rpi0imGYV92DRlcm2aw==",
   "success": true,
-  "projectFilePath": "/home/tuan/Màn hình nền/bigProjectApi-main/DAL/DAL.csproj",
+  "projectFilePath": "/home/tuan/Màn hình nền/api/DAL/DAL.csproj",
   "expectedPackageFiles": [
     "/home/tuan/.nuget/packages/microsoft.extensions.configuration/5.0.0/microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "/home/tuan/.nuget/packages/microsoft.extensions.configuration.abstractions/5.0.0/microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",

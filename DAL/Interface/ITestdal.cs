@@ -4,14 +4,7 @@ using System.Text;
 using Models;
 namespace DAL.Interface
 {
-    public interface ITestDAL
-    {
-            List<test> GetNews();
-            bool Create(test model);
-            List<test> Search(string key);
-            test GetDatabyID(string id);
-    }
-
+   
     //sản phẩm
      public interface IproductDAL
     {
@@ -19,6 +12,17 @@ namespace DAL.Interface
             bool Create(Product model);
             List<Product> Search(string key);
             Product GetDatabyID(string id);
+            bool delete (string id);
+    }
+
+
+    //loai san pham
+     public interface IcategorytDAL
+    {
+            List<Categories> GetNews();
+            bool Create(Categories model);
+            List<Categories> Search(string key);
+            Categories GetDatabyID(string id);
             bool delete (string id);
     }
 }

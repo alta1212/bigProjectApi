@@ -6,13 +6,7 @@ using Models;
 
 namespace BUS.Interface
 {
-    public partial interface ITestBUS
-    {
-        bool Create(test model);
-        List<test> GetNews();
-        List<test> Search(string key);
-        test GetDatabyID(string id);
-    }
+ 
 
 
     //sản phẩm
@@ -22,6 +16,15 @@ namespace BUS.Interface
         List<Product> Getproduct();
         List<Product> Search(string key);
         Product GetDatabyID(string id);
+        bool delete(string id);
+    }
+    //loai san pham
+      public partial interface ICategoriesBUS
+    {
+        bool Create(Categories model);
+        List<Categories> GetCategories();
+        List<Categories> Search(string key);
+        Categories GetDatabyID(string id);
         bool delete(string id);
     }
 }

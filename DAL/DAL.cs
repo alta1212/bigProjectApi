@@ -7,85 +7,6 @@ using DAL.Helper;
 using System.Linq;
 namespace DAL
 {
-    public class testdalRepository:ITestDAL
-    {
-        private IDatabaseHelper _dbHelper;
-        public testdalRepository(IDatabaseHelper dbHelper)
-        {
-            _dbHelper = dbHelper;
-        }
-
-        public List<test> GetNews()
-        {
-            string msgError = "";
-            
-            try
-            {
-                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "getAllNews");
-                if (!string.IsNullOrEmpty(msgError))
-                    throw new Exception(msgError);
-                return dt.ConvertTo<test>().ToList();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-         public bool Create(test model)
-        {
-            string msgError = "";
-            try
-            {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "createst",
-                "@id", model.id,
-                "@name", model.name
-);
-                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
-                {
-                    throw new Exception(Convert.ToString(result) + msgError);
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-          public test GetDatabyID(string id)
-        {
-            string msgError = "";
-            try
-            {
-                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_item_get_by_id",
-                     "@id", id);
-                if (!string.IsNullOrEmpty(msgError))
-                    throw new Exception(msgError);
-                return dt.ConvertTo<test>().FirstOrDefault();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-         public List<test> Search(string key)
-        {
-             string msgError = "";
-            try
-            {
-                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_item_search",
-                "key", key);
-                if (!string.IsNullOrEmpty(msgError))
-                    throw new Exception(msgError);
-                return dt.ConvertTo<test>().ToList();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-    }
-
-
 
 
     //sản phẩm
@@ -120,9 +41,9 @@ namespace DAL
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "CREATE_ITEM_PRODUCTS",
                 "@NAME", model.Product_Name,
-                "@PRICE", model.Product_ID,
-                "@CATEGORY_ID",model.Category_ID
-);
+                "@PRICE", model.Price,
+                "@CATEGORY_ID",model.Category_ID,
+                "@image", model.image);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -186,5 +107,101 @@ namespace DAL
     }
 
 
+    public class CategoryRepository:IcategorytDAL
+    {
+        private IDatabaseHelper _dbHelper;
+        public CategoryRepository(IDatabaseHelper dbHelper)
+        {
+            _dbHelper = dbHelper;
+        }
+
+        public List<Categories> GetNews()
+        {
+            string msgError = "";
+            
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "GETALL_CATEGORIES");
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<Categories>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+         public bool Create(Categories model)
+        {
+            // string msgError = "";
+            // try
+            // {
+            //     var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "CREATE_ITEM_PRODUCTS",
+            //     "@NAME", model.Product_Name,
+            //     "@PRICE", model.Price,
+            //     "@CATEGORY_ID",model.Category_ID,
+            //     "@image", model.image);
+            //     if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+            //     {
+            //         throw new Exception(Convert.ToString(result) + msgError);
+            //     }
+            //     return true;
+            // }
+            // catch (Exception ex)
+            // {
+            //     throw ex;
+            // }
+            return true;
+        }
+          public Categories GetDatabyID(string id)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_item_get_by_id",
+                     "@id", id);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<Categories>().FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+         public List<Categories> Search(string key)
+        {
+             string msgError = "";
+            try
+            {
+                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_item_search",
+                "@key", key);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<Categories>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool delete(string key)
+        {
+            string msgError = "";
+            try
+            {
+                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_item_delete",
+                "@key", key);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+    }
 
 }

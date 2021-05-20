@@ -10,50 +10,7 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Configuration;
 namespace BUS
 {
-    public class testBusiness:BUS.Interface.ITestBUS
-    {
-             private ITestDAL _res;
-        
-        public testBusiness(ITestDAL  News)
-        {
-            _res = News;       
-        }
-
-        public List<test> GetNews()
-        {
-            var allNews = _res.GetNews();
-            var lstParent = allNews.ToList();
-           
-            // foreach (var item in lstParent)
-            // {
-            //     item.list = GetHiearchyList(allNews);
-            // }
-            return lstParent;
-        }
-        // public List<test> GetHiearchyList(List<test> lstAll)
-        // {
-        //     var lstChilds = lstAll.ToList();
-        //     if (lstChilds.Count == 0)
-        //         return null;
-            
-        //     return lstChilds.ToList();
-        // }
-         public bool Create(test model)
-        {
-            return _res.Create(model);
-        }
-           public List<test> Search(string key)
-        {
-            return _res.Search(key);
-        }
-          public test GetDatabyID(string id)
-        {
-            return _res.GetDatabyID(id);
-        }
-    }
-
-
-
+    //san pham
      public class productBusiness:BUS.Interface.IproductBUS
     {
         private IproductDAL _res;
@@ -91,6 +48,53 @@ namespace BUS
             return _res.Search(key);
         }
           public Product GetDatabyID(string id)
+        {
+            return _res.GetDatabyID(id);
+        }
+        public bool delete(string id)
+        {
+            return _res.delete(id);
+        }
+    }
+    //loai san pham
+       public class CategoriesBusiness:BUS.Interface.ICategoriesBUS
+
+    {
+        private IcategorytDAL _res;
+        
+        public CategoriesBusiness(IcategorytDAL  News)
+        {
+            _res = News;       
+        }
+
+        public List<Categories> GetCategories()
+        {
+            var allNews = _res.GetNews();
+            var lstParent = allNews.ToList();
+           
+            // foreach (var item in lstParent)
+            // {
+            //     item.list = GetHiearchyList(allNews);
+            // }
+            return lstParent;
+        }
+        // public List<Categories> GetHiearchyList(List<Categories> lstAll)
+        // {
+        //     var lstChilds = lstAll.ToList();
+        //     if (lstChilds.Count == 0)
+        //         return null;
+            
+        //     return lstChilds.ToList();
+        // }
+         public bool Create(Categories model)
+        {
+            return _res.Create(model);
+        }
+           public List<Categories> Search(string key)
+        {
+            return _res.Search(key);
+        }
+          public Categories GetDatabyID(string id)
         {
             return _res.GetDatabyID(id);
         }

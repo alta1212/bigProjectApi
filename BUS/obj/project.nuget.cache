@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LLh3OjoqiNvQKL9Juo9JtfOmn+LaLL3/jxbQNmjXUg8GoemRZMaiVEq8hfPAaHJ6D4UStZtykqQdlrb3RkLsvQ==",
+  "dgSpecHash": "Ws5SmlUWI/YNd3b1Kx8f9n/YdWQfXG8WRtyOo0X1818S0BRMSbFkD4zcFzjxzmn1etVtyGdcNqI8tRbR19Tidg==",
   "success": true,
-  "projectFilePath": "/home/tuan/Màn hình nền/bigProjectApi-main/BUS/BUS.csproj",
+  "projectFilePath": "/home/tuan/Màn hình nền/api/BUS/BUS.csproj",
   "expectedPackageFiles": [
     "/home/tuan/.nuget/packages/microsoft.aspnetcore.cryptography.internal/5.0.5/microsoft.aspnetcore.cryptography.internal.5.0.5.nupkg.sha512",
     "/home/tuan/.nuget/packages/microsoft.aspnetcore.dataprotection/5.0.5/microsoft.aspnetcore.dataprotection.5.0.5.nupkg.sha512",
