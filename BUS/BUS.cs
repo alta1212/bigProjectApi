@@ -20,9 +20,9 @@ namespace BUS
             _res = News;       
         }
 
-        public List<Product> Getproduct()
+        public List<Product> Getproduct(int k)
         {
-            var allNews = _res.GetNews();
+            var allNews = _res.GetNews(k);
             var lstParent = allNews.ToList();
            
             // foreach (var item in lstParent)
@@ -42,6 +42,11 @@ namespace BUS
          public bool Create(Product model)
         {
             return _res.Create(model);
+        }
+
+           public bool update(Product model)
+        {
+            return _res.update(model);
         }
            public List<Product> Search(string key)
         {
@@ -89,6 +94,10 @@ namespace BUS
          public bool Create(Categories model)
         {
             return _res.Create(model);
+        }
+          public bool Update(Categories model)
+        {
+            return _res.Update(model);
         }
            public List<Categories> Search(string key)
         {

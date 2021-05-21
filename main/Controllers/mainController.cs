@@ -19,16 +19,24 @@ namespace main.Controllers
         {
             _productBusiness = proBusiness;
         }
-        [Route("get-product")]
+        [Route("get-product/{page}")]
         [HttpGet]
-        public IEnumerable<Models.Product> GetAllMenu()
+        public IEnumerable<Models.Product> GetAllMenu(int page)
         {
-            return _productBusiness.Getproduct();
+            return _productBusiness.Getproduct(page);
         }
-      
+       
         [Route("create-item")]
         [HttpPost]
         public Product CreateItem([FromForm] Product model)
+        {
+            _productBusiness.Create(model);
+            return model;
+        } 
+
+        [Route("update-item")]
+        [HttpPost]
+        public Product updateItem([FromForm] Product model)
         {
             _productBusiness.Create(model);
             return model;
@@ -90,6 +98,13 @@ namespace main.Controllers
         public Categories CreateItem([FromForm] Categories model)
         {
             _CategoriesBusiness.Create(model);
+            return model;
+        } 
+        [Route("update-item")]
+        [HttpPost]
+        public Categories UpdateItem([FromForm] Categories model)
+        {
+            _CategoriesBusiness.Update(model);
             return model;
         } 
         [Route("get-by-id/{id}")]
