@@ -49,6 +49,7 @@ namespace Models
         public string CreatedDate { get; set; }
 
         public string Phone { get; set; }
+        public string total  { get; set; }
 
     }
     public class orderList

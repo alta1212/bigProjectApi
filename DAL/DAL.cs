@@ -272,7 +272,7 @@ namespace DAL
         static int id=3;
         public bool Createorder(order model)
         {
-            string query=string.Format("insert into Orders (Order_Name,CreatedDate,Phone,Address)  OUTPUT INSERTED.Order_ID VALUES (N'{0}',N'{1}',N'{2}',N'{3}')",model.Order_Name,DateTime.Today,model.Phone,model.Address);
+            string query=string.Format("insert into Orders (Order_Name,CreatedDate,Phone,Address,total)  OUTPUT INSERTED.Order_ID VALUES (N'{0}',N'{1}',N'{2}',N'{3}',{4})",model.Order_Name,DateTime.Today,model.Phone,model.Address,model.total);
            id= _dbHelper.getLastId(query);
             
              return true;
@@ -286,10 +286,10 @@ namespace DAL
             {
 
                      var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "oderdetail",
-                "@OrderDetail_OrderID", i.id,
+                "@OrderDetail_OrderID", j,
                 "@OrderDetail_Name",i.label,
                 "@Quantity",i.quantity,
-                "@total",i.price
+                "@total",int.Parse(i.price)*int.Parse(i.quantity)
             );
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
