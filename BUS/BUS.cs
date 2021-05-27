@@ -31,6 +31,17 @@ namespace BUS
             // }
             return lstParent;
         }
+             public List<Product> Getproduct()
+        {
+            var allNews = _res.GetNews();
+            var lstParent = allNews.ToList();
+           
+            // foreach (var item in lstParent)
+            // {
+            //     item.list = GetHiearchyList(allNews);
+            // }
+            return lstParent;
+        }
         // public List<test> GetHiearchyList(List<test> lstAll)
         // {
         //     var lstChilds = lstAll.ToList();
@@ -112,4 +123,26 @@ namespace BUS
             return _res.delete(id);
         }
     }
+
+    public class userBusiness:BUS.Interface.IuserBUS
+    {
+        private IuserDAL _res;
+        
+        public userBusiness(IuserDAL  News)
+        {
+            _res = News;       
+        }
+
+        public bool Createorder(order model)
+        {
+            return _res.Createorder(model);
+        }
+        public  IEnumerable<cart> orderDetails(IEnumerable<cart> model)
+        {
+            return _res.orderDetails(model);
+        }
+         
+      
+    }
+   
 }

@@ -9,6 +9,7 @@ namespace DAL.Interface
      public interface IproductDAL
     {
             List<Product> GetNews(int k);
+             List<Product> GetNews();
             bool Create(Product model);
              bool update(Product model);
             List<Product> Search(string key);
@@ -27,4 +28,12 @@ namespace DAL.Interface
             Categories GetDatabyID(string id);
             bool delete (string id);
     }
+
+       public interface IuserDAL
+        {
+            
+            bool Createorder(order model);
+               IEnumerable<cart>  orderDetails(IEnumerable<cart> model);
+        }   
+      
 }

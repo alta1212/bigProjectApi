@@ -10,6 +10,18 @@ namespace DAL.Helper
     public class DatabaseHelper : IDatabaseHelper
     {
 
+        public int getLastId(string query)
+        {
+             OpenConnection();
+
+           
+              SqlCommand command = new SqlCommand(query, sqlConnection);
+            
+
+            int lastId = (int)command.ExecuteScalar(); 
+             CloseConnection();
+            return lastId;
+        }
         //Connection String
         public string StrConnection { get; set; }
         //Connection

@@ -1,0 +1,172 @@
+<body >
+    
+</body>
+
+    <script src="js/jquery.min.js"></script>
+    <!-- <script>
+       
+        var html="";
+            $.ajax({
+            type: "get",  
+            url: "https://localhost:5001/Categories/get-Category",
+        
+        
+            success: function(data)
+            {   
+              
+                console.log(data)
+                html+="<nav><ul>";
+                for(var i =0;i<data.length;i++)
+                { 
+                    
+                    if(data[i].parentid==0)
+                    { html+="<li>";
+                        html+=data[i].category_Name;
+                       childmenu(data,data[i].category_ID);
+                    }
+                   
+                }
+                html+="</ul></nav>";
+
+                $("body").html(html)
+                console.log(html)
+               
+            },
+            error : function (e){      
+                console.log(e)
+            }
+        })
+
+      
+        function childmenu(data,j)
+        {  
+            var idChildMenu=[];
+            var nameChildMenu=[];
+           
+            
+                for(var i =0;i<data.length;i++)
+                {  
+                    if(data[i].parentid==j)
+                    {
+                       
+                        idChildMenu.push(data[i].category_ID);
+                        nameChildMenu.push(data[i].category_Name);
+                       
+                      
+                    }
+                   
+                 
+                }
+
+                if(idChildMenu.length>0)
+                {
+
+                    html+="<ul>"; //Bắt đầu một phân cấp với thẻ <ul>
+                    for(var k=0;k<idChildMenu.length;k++)
+                    {
+                        html+="<li>"; //Bắt đầu một dòng menu con với thẻ <li>
+                       
+                        html+=nameChildMenu[k];
+                        //Đệ quy, gọi lại chính hàm CreateChildMenu với tham số là idChildMenu hiện tại.
+                        childmenu(data,idChildMenu[k]);
+                    }
+                    html+="</ul>"; //Kết thúc một phân cấp với thẻ </ul>
+                }
+                else
+                {
+                        html+="</li>";
+                }
+                
+        }
+    </script> -->
+
+
+
+<script>
+           var dd="";
+    var html="";
+        $.ajax({
+        type: "get",  
+        url: "https://localhost:5001/Categories/get-Category",
+    
+    
+        success: function(data)
+        {   
+          
+            console.log(data)
+            html+="<select>";
+            for(var i =0;i<data.length;i++)
+            { 
+                
+                if(data[i].parentid==0)
+                { html+="<option>";
+                    html+=data[i].category_Name;
+                    html+="</option>";
+                   childmenu(data,data[i].category_ID);
+                   
+                }
+               
+            }
+            html+="</select>";
+
+            $("body").html(html)
+            console.log(html)
+           
+        },
+        error : function (e){      
+            console.log(e)
+        }
+    })
+
+
+    function childmenu(data,j)
+    {  
+        var idChildMenu=[];
+        var nameChildMenu=[];
+       
+      
+            for(var i =0;i<data.length;i++)
+            {  
+                if(data[i].parentid==j)
+                {
+                   
+                    idChildMenu.push(data[i].category_ID);
+                    nameChildMenu.push(data[i].category_Name);
+                   
+                   
+                }
+               
+             
+            }
+           
+            if(idChildMenu.length>0)
+            {
+                
+             
+                for(var k=0;k<idChildMenu.length;k++)
+                {   dd+="---";
+                    html+="<option>"; //Bắt đầu một dòng menu con với thẻ <li>
+                    html+=dd;
+                    html+=nameChildMenu[k];
+                    
+                    //Đệ quy, gọi lại chính hàm CreateChildMenu với tham số là idChildMenu hiện tại.
+                    childmenu(data,idChildMenu[k]);
+                    html+="</option>";
+                   
+                }
+               
+            }
+            else
+            {
+                 dd="";
+            }
+            
+            
+    }
+</script>
+
+</body>
+
+
+<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/package-all.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 May 2021 06:36:31 GMT -->
+</html>

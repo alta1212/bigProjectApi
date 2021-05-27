@@ -35,6 +35,22 @@ namespace DAL
                 throw ex;
             }
         }
+         public List<Product> GetNews()
+        {
+            string msgError = "";
+            
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "getAllproduct");
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<Product>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
          public bool Create(Product model)
         {
             string msgError = "";
@@ -160,7 +176,8 @@ namespace DAL
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "CREATE_ITEM_Categories",
                 "@NAME", model.Category_Name,
-                "@image",model.image
+                "@image",model.image,
+                "@parentid",model.parentid
              );
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
@@ -243,6 +260,44 @@ namespace DAL
                 throw ex;
             }
         }
+    }
+    public class userRepository:IuserDAL
+    {
+        private IDatabaseHelper _dbHelper;
+        public userRepository(IDatabaseHelper dbHelper)
+        {
+            _dbHelper = dbHelper;
+        }
+
+        static int id=3;
+        public bool Createorder(order model)
+        {
+            string query=string.Format("insert into Orders (Order_Name,CreatedDate,Phone,Address)  OUTPUT INSERTED.Order_ID VALUES (N'{0}',N'{1}',N'{2}',N'{3}')",model.Order_Name,DateTime.Today,model.Phone,model.Address);
+           id= _dbHelper.getLastId(query);
+            
+             return true;
+        }
+
+         public IEnumerable<cart> orderDetails (IEnumerable<cart>  model)
+         {
+            int j= id;
+            string msgError = "";
+            foreach(cart  i in model)
+            {
+
+                     var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "oderdetail",
+                "@OrderDetail_OrderID", i.id,
+                "@OrderDetail_Name",i.label,
+                "@Quantity",i.quantity,
+                "@total",i.price
+            );
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+            }
+            return model;
+         }
     }
 
 }

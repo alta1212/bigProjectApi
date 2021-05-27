@@ -260,7 +260,16 @@
                                 </div>
                                 <div class="tab-inn">
                                     <form id="addCategory">
+
+
                                         <div class="row">
+                                            <div class="input-field col s6">
+                                                <select id="type" required>
+                                                    <option value="" disabled selected>Chọn danh mục loại sản phẩm cha</option>
+                                                   
+                                                </select>
+                                                <label>Danh mục loại sản phẩm cha</label>
+                                            </div>
                                             <div class="input-field col s6">
                                                 <input required id="name" type="text" name="name" class="validate">
                                                 <label for="name">Tên loại Sản phẩm</label>
@@ -317,7 +326,90 @@
     <script>
          var link="https://localhost:5001/";
 
-     
+         var dd="";
+    var html="";
+        $.ajax({
+        type: "get",  
+        url: "https://localhost:5001/Categories/get-Category",
+    
+    
+        success: function(data)
+        {   
+          
+            console.log(data)
+            html+="<select>";
+                html+="<option value='0'>Root</option>";
+            for(var i =0;i<data.length;i++)
+            { 
+                
+                if(data[i].parentid==0)
+                {
+                    html+="<option value='"+data[i].category_ID+"'>";
+                    html+=data[i].category_Name;
+                    html+="</option>";
+                   childmenu(data,data[i].category_ID);
+                   
+                }
+               
+            }
+            html+="</select>";
+
+            $("#type").html(html)
+            console.log(html)
+           
+        },
+        error : function (e){      
+            console.log(e)
+        }
+    })
+
+
+    function childmenu(data,j)
+    {  
+        var idChildMenu=[];
+        var nameChildMenu=[];
+       
+      
+            for(var i =0;i<data.length;i++)
+            {  
+                if(data[i].parentid==j)
+                {
+                   
+                    idChildMenu.push(data[i].category_ID);
+                    nameChildMenu.push(data[i].category_Name);
+                   
+                   
+                }
+               
+             
+            }
+           
+            if(idChildMenu.length>0)
+            {
+                
+             
+                for(var k=0;k<idChildMenu.length;k++)
+                {   dd+="---";
+                    html+="<option value='"+idChildMenu[k]+"'>"; //Bắt đầu một dòng menu con với thẻ <li>
+                    html+=dd;
+                    html+=nameChildMenu[k];
+                    
+                    //Đệ quy, gọi lại chính hàm CreateChildMenu với tham số là idChildMenu hiện tại.
+                    childmenu(data,idChildMenu[k]);
+                    html+="</option>";
+                   
+                }
+               
+            }
+            else
+            {
+                 dd="";
+            }
+            
+            
+    }
+
+
 
         $("#addCategory").submit(function(e){  
             e.preventDefault();
@@ -338,7 +430,8 @@
             }).then(data => data.json()).then(data => {
                 var _data={
                     "Category_Name": $("#name").val() ,
-                    "image":data.data.link
+                    "image":data.data.link,
+                    "parentid":$('#type').val()
                 }
 
                 $.ajax({

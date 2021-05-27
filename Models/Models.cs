@@ -31,11 +31,58 @@ namespace Models
         public string image { get; set; }
 
         public string Category_Name { get; set; }
-         public int total { get; set; }
+        public int parentid { get; set; }
 
     }
     public class CategoriesList
     {
           public List<Categories> list { get; set; }
+    }
+    //order
+    public class order
+    {
+        public string Order_ID { get; set; }
+        public string Order_Name { get; set; }
+
+        public string Address { get; set; }
+
+        public string CreatedDate { get; set; }
+
+        public string Phone { get; set; }
+
+    }
+    public class orderList
+    {
+          public List<order> list { get; set; }
+    }
+
+
+    //order detail
+      public class OrderDetails
+    {
+        public string OrderDetail_ID { get; set; }
+        public string OrderDetail_OrderID { get; set; }
+
+        public string OrderDetail_Name { get; set; }
+
+        public string Quantity { get; set; }
+
+     
+
+    }
+    public class OrderDetailsList
+    {
+          public List<OrderDetails> list { get; set; }
+    }
+
+    public class cart
+    {
+        public string id { get; set; }
+        public string image { get; set; }
+
+        public string label { get; set; }
+
+        public string price { get; set; }
+        public string quantity { get; set; }
     }
 }

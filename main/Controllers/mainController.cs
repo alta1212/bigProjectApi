@@ -26,6 +26,13 @@ namespace main.Controllers
             return _productBusiness.Getproduct(page);
         }
        
+         [Route("get-all")]
+        [HttpGet]
+        public IEnumerable<Models.Product> GetAll()
+        {
+            return _productBusiness.Getproduct();
+        }
+
         [Route("create-item")]
         [HttpPost]
         public Product CreateItem([FromForm] Product model)
@@ -138,5 +145,44 @@ namespace main.Controllers
            
             return _CategoriesBusiness.delete(id);
         }
+
+        // test tiếng việt cho bambo a á ơ đây là thử viết ừ ứccc chế @@
     }
 }
+
+
+    [ApiController]
+    [Route("[controller]")]
+   
+    public class userController : ControllerBase
+    {
+        private IuserBUS _userBusiness;
+        
+        public userController(IuserBUS proBusiness)
+        {
+            _userBusiness = proBusiness;
+        }
+        [Route("get-Category")]
+        [HttpGet]
+        // public IEnumerable<Models.Categories> GetAllMenu()
+        // {
+        //     return _CategoriesBusiness.GetCategories();
+        // }
+      
+        [Route("create-order")]
+        [HttpPost]
+        public order CreateItem([FromForm] order model)
+        {
+            _userBusiness.Createorder(model);
+            return model;
+        } 
+        [Route("order-detail-insert")]
+        [HttpPost]
+        public IEnumerable<cart> insertorderdetail([FromBody] IEnumerable<cart> model)
+        {
+
+            _userBusiness.orderDetails(model);
+            return model;
+        }
+    }
+

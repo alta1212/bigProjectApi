@@ -40,6 +40,9 @@ namespace main
             services.AddTransient<BUS.Interface.IproductBUS, productBusiness>();
              services.AddTransient< DAL.Interface.IcategorytDAL , CategoryRepository>();
             services.AddTransient<BUS.Interface.ICategoriesBUS, CategoriesBusiness>();
+
+            services.AddTransient< DAL.Interface.IuserDAL , userRepository>();
+            services.AddTransient<BUS.Interface.IuserBUS, userBusiness>();
             services.AddCors(options =>options.AddPolicy("*",
                 builder=>builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
                              

@@ -330,29 +330,88 @@
     <script>
          var link="https://localhost:5001/";
 
+       
+         var dd="";
+    var html="";
         $.ajax({
-            type: "get",  
-            url: link+"Categories/get-Category",
-        
-        
-            success: function(data)
+        type: "get",  
+        url: "https://localhost:5001/Categories/get-Category",
+    
+    
+        success: function(data)
+        {   
+          
+            console.log(data)
+            html+="<select>";
+            for(var i =0;i<data.length;i++)
             { 
-                var html="";var Html_="";
                 
-                for(var i=0;i<data.length;i++)
-                {   
-                    html+='<option value="'+data[i].category_ID+'">'+data[i].category_Name+'</option>'
-                
+                if(data[i].parentid==0)
+                {
+                    html+="<option value='"+data[i].category_ID+"'>";
+                    html+=data[i].category_Name;
+                    html+="</option>";
+                   childmenu(data,data[i].category_ID);
+                   
                 }
-            
-            
-                $("#type").html($("#type").html()+html);
-            },
-            error : function (e){      
-                console.log(e)
-            
+               
             }
-        })
+            html+="</select>";
+
+            $("#type").html(html)
+            console.log(html)
+           
+        },
+        error : function (e){      
+            console.log(e)
+        }
+    })
+
+
+    function childmenu(data,j)
+    {  
+        var idChildMenu=[];
+        var nameChildMenu=[];
+       
+      
+            for(var i =0;i<data.length;i++)
+            {  
+                if(data[i].parentid==j)
+                {
+                   
+                    idChildMenu.push(data[i].category_ID);
+                    nameChildMenu.push(data[i].category_Name);
+                   
+                   
+                }
+               
+             
+            }
+           
+            if(idChildMenu.length>0)
+            {
+                
+             
+                for(var k=0;k<idChildMenu.length;k++)
+                {   dd+="---";
+                    html+="<option value='"+idChildMenu[k]+"'>"; //Bắt đầu một dòng menu con với thẻ <li>
+                    html+=dd;
+                    html+=nameChildMenu[k];
+                    
+                    //Đệ quy, gọi lại chính hàm CreateChildMenu với tham số là idChildMenu hiện tại.
+                    childmenu(data,idChildMenu[k]);
+                    html+="</option>";
+                   
+                }
+               
+            }
+            else
+            {
+                 dd="";
+            }
+            
+            
+    }
 
         $("#addProduct").submit(function(e){  
             e.preventDefault();
