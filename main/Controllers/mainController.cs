@@ -79,6 +79,12 @@ namespace main.Controllers
            
             return _productBusiness.delete(id);
         }
+         [Route("get-all-by-type/{id}")]
+         [HttpGet]
+        public IEnumerable<Product> getbyttype(string id)
+        {
+             return _productBusiness.GetDatabytype(id);
+        }
     }
 
 
@@ -184,5 +190,22 @@ namespace main.Controllers
             _userBusiness.orderDetails(model);
             return model;
         }
+
+         [Route("allorder")]
+        [HttpGet]
+        public List<order> getallorder()
+        {
+
+           
+            return  _userBusiness.getallorder();;
+        }
+        [Route("orderdetail/{id}")]
+        [HttpGet]
+        public List<OrderDetails> all(string id)
+        {
+            return _userBusiness.getallorderdetail(id);
+        }
+
+       
     }
 

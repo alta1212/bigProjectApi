@@ -5805,8 +5805,8 @@ select:disabled {
 .select-dropdown li.disabled,
 .select-dropdown li.disabled > span,
 .select-dropdown li.optgroup {
-    color: rgba(0, 0, 0, 0.3);
-    background-color: transparent;
+    color: rgba(12, 11, 11, 0.856);
+    background-color: #9b87872a;
 }
 .prefix ~ .select-wrapper {
     margin-left: 3rem;

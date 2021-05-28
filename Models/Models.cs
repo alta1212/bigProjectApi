@@ -68,7 +68,7 @@ namespace Models
 
         public string Quantity { get; set; }
 
-     
+        public string total { get; set; }
 
     }
     public class OrderDetailsList

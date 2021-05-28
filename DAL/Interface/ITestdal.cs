@@ -15,6 +15,7 @@ namespace DAL.Interface
             List<Product> Search(string key);
             Product GetDatabyID(string id);
             bool delete (string id);
+            IEnumerable<Product> GetDatabytype(string id);
     }
 
 
@@ -34,6 +35,9 @@ namespace DAL.Interface
             
             bool Createorder(order model);
                IEnumerable<cart>  orderDetails(IEnumerable<cart> model);
+
+               List<order> getallorder();
+               List<OrderDetails> getallorderdetail(string id);
         }   
       
 }

@@ -19,6 +19,7 @@ namespace BUS.Interface
         List<Product> Search(string key);
         Product GetDatabyID(string id);
         bool delete(string id);
+        IEnumerable<Product> GetDatabytype(string id);
     }
     //loai san pham
       public partial interface ICategoriesBUS
@@ -38,5 +39,7 @@ namespace BUS.Interface
         // List<Categories> Search(string key);
         IEnumerable<cart> orderDetails(IEnumerable<cart> model);
         // bool delete(string id);
+        List<order> getallorder();
+         List<OrderDetails> getallorderdetail(string id);
     }
 }

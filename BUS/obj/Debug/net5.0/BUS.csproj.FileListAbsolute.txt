@@ -57,7 +57,6 @@
 /home/tuan/Màn hình nền/api/BUS/bin/Debug/net5.0/Models.dll
 /home/tuan/Màn hình nền/api/BUS/bin/Debug/net5.0/Models.pdb
 /home/tuan/Màn hình nền/api/BUS/bin/Debug/net5.0/DAL.pdb
-/home/tuan/Màn hình nền/api/BUS/obj/Debug/net5.0/BUS.csprojAssemblyReference.cache
 /home/tuan/Màn hình nền/api/BUS/obj/Debug/net5.0/BUS.GeneratedMSBuildEditorConfig.editorconfig
 /home/tuan/Màn hình nền/api/BUS/obj/Debug/net5.0/BUS.AssemblyInfoInputs.cache
 /home/tuan/Màn hình nền/api/BUS/obj/Debug/net5.0/BUS.AssemblyInfo.cs
@@ -66,3 +65,4 @@
 /home/tuan/Màn hình nền/api/BUS/obj/Debug/net5.0/BUS.dll
 /home/tuan/Màn hình nền/api/BUS/obj/Debug/net5.0/ref/BUS.dll
 /home/tuan/Màn hình nền/api/BUS/obj/Debug/net5.0/BUS.pdb
+/home/tuan/Màn hình nền/api/BUS/obj/Debug/net5.0/BUS.csproj.AssemblyReference.cache

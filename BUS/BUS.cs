@@ -20,6 +20,10 @@ namespace BUS
             _res = News;       
         }
 
+        public IEnumerable<Product> GetDatabytype(string id)
+        {
+            return _res.GetDatabytype(id);
+        }
         public List<Product> Getproduct(int k)
         {
             var allNews = _res.GetNews(k);
@@ -141,8 +145,13 @@ namespace BUS
         {
             return _res.orderDetails(model);
         }
-         
-      
+        public List<order> getallorder()
+        {
+            return _res.getallorder();
+        }
+       public List<OrderDetails> getallorderdetail(string id){
+           return _res.getallorderdetail(id);
+       }
     }
    
 }

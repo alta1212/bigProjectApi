@@ -142,6 +142,24 @@ namespace DAL
                 throw ex;
             }
         }
+
+
+        public IEnumerable<Product> GetDatabytype(string id)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "GET_ITEM_PRODUCTS_TYPE",
+                     "@id", id);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<Product>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
 
@@ -297,7 +315,39 @@ namespace DAL
                 }
             }
             return model;
-         }
+        }
+
+        public List<order> getallorder()
+        {
+             string msgError = "";
+            try
+            {
+                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "allorder");
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<order>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<OrderDetails> getallorderdetail(string id)
+        {
+             string msgError = "";
+            try
+            {
+                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "orderdetail",
+                 "@id",id);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<OrderDetails>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
 }
