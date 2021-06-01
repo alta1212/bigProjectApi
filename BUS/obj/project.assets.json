@@ -1309,11 +1309,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/tuan/Màn hình nền/api/BUS/BUS.csproj",
+      "projectUniqueName": "/home/tuan/Màn hình nền/bigProjectApi/BUS/BUS.csproj",
       "projectName": "BUS",
-      "projectPath": "/home/tuan/Màn hình nền/api/BUS/BUS.csproj",
+      "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/BUS/BUS.csproj",
       "packagesPath": "/home/tuan/.nuget/packages/",
-      "outputPath": "/home/tuan/Màn hình nền/api/BUS/obj/",
+      "outputPath": "/home/tuan/Màn hình nền/bigProjectApi/BUS/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/tuan/.nuget/NuGet/NuGet.Config"
@@ -1328,11 +1328,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/tuan/Màn hình nền/api/DAL/DAL.csproj": {
-              "projectPath": "/home/tuan/Màn hình nền/api/DAL/DAL.csproj"
+            "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj": {
+              "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj"
             },
-            "/home/tuan/Màn hình nền/api/Models/Models.csproj": {
-              "projectPath": "/home/tuan/Màn hình nền/api/Models/Models.csproj"
+            "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj": {
+              "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj"
             }
           }
         }

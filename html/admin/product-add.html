@@ -173,7 +173,10 @@
                                                 <input required id="price" type="number" class="validate">
                                                 <label for="price">Giá</label>
                                             </div>
-                                          
+                                            <div class="input-field col s6">
+                                                <input required id="mota" type="text" class="validate">
+                                                <label for="mota">mô tả</label>
+                                            </div>
                                         </div>
                                         <div class="row">
                                             <div class="file-field input-field">
@@ -186,11 +189,13 @@
                                                 </div>
                                             </div>
                                         </div>
+                                       
                                         <div class="row">
                                             <div id="submitBnt" class="input-field col s12">
                                                 <input type="submit" class="waves-effect waves-light btn-large">
                                             </div>
                                         </div>
+
                                     </form>
                                 </div>
                             </div>
@@ -248,14 +253,15 @@
                     html+=data[i].category_Name;
                     html+="</option>";
                    childmenu(data,data[i].category_ID);
-                   
+                  
+
                 }
                
             }
             html+="</select>";
-
+            $('select').material_select();
             $("#type").html(html)
-            console.log(html)
+           
            
         },
         error : function (e){      
@@ -330,7 +336,8 @@
                     "Product_Name":$("#name").val(),
                     "Price": $("#price").val(),
                     "image": data.data.link,
-                    "Category_ID":$( "#type" ).val()
+                    "Category_ID":$( "#type" ).val(),
+                    "mota":$("#mota").val()
                 }
             
                 $.ajax({

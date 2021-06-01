@@ -17,6 +17,7 @@ namespace Models
         public string image { get; set; }
 
         public int total { get; set; }
+        public string mota { get; set; }
 
     }
     public class ProductList

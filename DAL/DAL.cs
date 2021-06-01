@@ -60,7 +60,8 @@ namespace DAL
                 "@NAME", model.Product_Name,
                 "@PRICE", model.Price,
                 "@CATEGORY_ID",model.Category_ID,
-                "@image", model.image);
+                "@image", model.image,
+                "@mota",model.mota);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/tuan/Màn hình nền/api/Models/Models.csproj",
+      "projectUniqueName": "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj",
       "projectName": "Models",
-      "projectPath": "/home/tuan/Màn hình nền/api/Models/Models.csproj",
+      "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj",
       "packagesPath": "/home/tuan/.nuget/packages/",
-      "outputPath": "/home/tuan/Màn hình nền/api/Models/obj/",
+      "outputPath": "/home/tuan/Màn hình nền/bigProjectApi/Models/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/tuan/.nuget/NuGet/NuGet.Config"
