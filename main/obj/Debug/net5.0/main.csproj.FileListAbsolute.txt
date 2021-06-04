@@ -240,3 +240,10 @@
 /home/tuan/Màn hình nền/bigProjectApi/main/obj/Debug/net5.0/ref/main.dll
 /home/tuan/Màn hình nền/bigProjectApi/main/obj/Debug/net5.0/main.pdb
 /home/tuan/Màn hình nền/bigProjectApi/main/obj/Debug/net5.0/main.genruntimeconfig.cache
+/home/tuan/Màn hình nền/bigProjectApi/main/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/tuan/Màn hình nền/bigProjectApi/main/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/tuan/Màn hình nền/bigProjectApi/main/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
+/home/tuan/Màn hình nền/bigProjectApi/main/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
+/home/tuan/Màn hình nền/bigProjectApi/main/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/tuan/Màn hình nền/bigProjectApi/main/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
+/home/tuan/Màn hình nền/bigProjectApi/main/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll

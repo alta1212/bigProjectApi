@@ -42,4 +42,8 @@ namespace BUS.Interface
         List<order> getallorder();
          List<OrderDetails> getallorderdetail(string id);
     }
+    public partial interface IadminBUS
+    {
+      bool login(admin a);
+    }
 }

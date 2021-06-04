@@ -7,8 +7,12 @@ using Microsoft.Extensions.Hosting;
 using BUS;
 using DAL;
 using DAL.Helper;
-//using Microsoft.IdentityModel.Tokens;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
+using System.Text;
+using System;
+
 namespace main
 {
     public class Startup
@@ -23,6 +27,30 @@ namespace main
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidIssuer = "https://fbi-demo.com",
+                ValidAudience = "https://fbi-demo.com",
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SXkSqsKyNUyvGbnHs7ke2NCq8zQzNLW7mPmHbnZZ")),
+                ClockSkew = TimeSpan.Zero // remove delay of token when expire
+            };
+
+            services
+                .AddAuthentication(options =>
+                {
+                    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddJwtBearer(cfg =>
+                {
+                    cfg.RequireHttpsMetadata = false;
+                    cfg.TokenValidationParameters = TokenValidationParameters;
+                });
+
+            services.AddAuthorization(cfg =>
+                {
+                    cfg.AddPolicy("Admin", policy => policy.RequireClaim("login", "true"));
+                  
+                });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -43,6 +71,9 @@ namespace main
 
             services.AddTransient< DAL.Interface.IuserDAL , userRepository>();
             services.AddTransient<BUS.Interface.IuserBUS, userBusiness>();
+
+                   services.AddTransient< DAL.Interface.IadminDAL , adminRepository>();
+            services.AddTransient<BUS.Interface.IadminBUS, adminBusiness>();
             services.AddCors(options =>options.AddPolicy("*",
                 builder=>builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
                              

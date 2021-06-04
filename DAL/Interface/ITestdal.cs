@@ -39,5 +39,8 @@ namespace DAL.Interface
                List<order> getallorder();
                List<OrderDetails> getallorderdetail(string id);
         }   
-      
+        public interface IadminDAL
+        {
+                bool login(admin a);
+        }
 }

@@ -87,4 +87,12 @@ namespace Models
         public string price { get; set; }
         public string quantity { get; set; }
     }
+
+     public class admin
+    {
+        public string Admin_ID { get; set; }
+        public string Admin_email { get; set; }
+
+        public string Admin_password { get; set; }
+    }
 }

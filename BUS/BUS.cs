@@ -154,4 +154,20 @@ namespace BUS
        }
     }
    
+
+
+    public class adminBusiness:BUS.Interface.IadminBUS
+    {
+         private IadminDAL _res;
+        
+        public adminBusiness(IadminDAL  News)
+        {
+            _res = News;       
+        }
+
+        public bool login(admin a)
+        {
+            return _res.login(a);
+        }
+    }
 }

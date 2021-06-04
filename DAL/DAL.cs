@@ -350,5 +350,39 @@ namespace DAL
             }
         }
     }
+    public class adminRepository:IadminDAL
+    {
+        private IDatabaseHelper _dbHelper;
+
+     
+
+        public adminRepository(IDatabaseHelper dbHelper)
+        {
+            _dbHelper = dbHelper;
+        }
+
+        public bool login(admin a)
+        {
+             string msgError = "";
+            try
+            {
+                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError,"adminLogin"
+                 ,"@email",a.Admin_email,
+                 "@pass",a.Admin_password);
+                
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                    if(dt.Rows.Count>0)
+                    {
+                        return true;
+                    }
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+    }
 
 }

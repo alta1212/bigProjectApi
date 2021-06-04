@@ -4,6 +4,11 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using BUS.Interface;
+using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authorization;
 
 namespace main.Controllers
 {
@@ -207,5 +212,56 @@ namespace main.Controllers
         }
 
        
-    }
 
+
+
+ 
+
+}
+
+    [ApiController]
+    [Route("[controller]")]
+    public class AdminController : ControllerBase
+    {
+        private IadminBUS _IadminBUS;
+        
+        public AdminController(IadminBUS proBusiness)
+        {
+            _IadminBUS = proBusiness;
+        }
+            [HttpPost]
+            [Route("login")]
+            public ActionResult Login([FromBody] admin User)
+            {
+
+                if(_IadminBUS.login(User))
+                {
+                        var Claims = new List<Claim>
+                                {
+                                    new Claim("login", "true"),
+                                };
+
+                        var Key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SXkSqsKyNUyvGbnHs7ke2NCq8zQzNLW7mPmHbnZZ"));
+
+                        var Token = new JwtSecurityToken(
+                            "https://fbi-demo.com",
+                            "https://fbi-demo.com",
+                            Claims,
+                            expires: DateTime.Now.AddDays(1),
+                            signingCredentials: new SigningCredentials(Key, SecurityAlgorithms.HmacSha256)
+                        );
+
+                        return new OkObjectResult(new JwtSecurityTokenHandler().WriteToken(Token));
+                }
+                else
+                {
+                        return null;
+                }
+              
+            }
+    
+    
+    
+    
+       
+    }
