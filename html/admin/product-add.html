@@ -227,144 +227,144 @@
 
     <!--======== SCRIPT FILES =========-->
     <script src="js/jquery.min.js"></script>
-    <script>
-         var link="https://localhost:5001/";
-
-       
-         var dd="";
-    var html="";
-        $.ajax({
-        type: "get",  
-        url: "https://localhost:5001/Categories/get-Category",
-    
-    
-        success: function(data)
-        {   
-          
-            console.log(data)
-            html+="<select>";
-                html+="<option selected disabled '>Chọn loại sản phẩm</option>";
-            for(var i =0;i<data.length;i++)
-            { 
-                
-                if(data[i].parentid==0)
-                {
-                    html+="<option disabled value='"+data[i].category_ID+"'>";
-                    html+=data[i].category_Name;
-                    html+="</option>";
-                   childmenu(data,data[i].category_ID);
-                  
-
-                }
-               
-            }
-            html+="</select>";
-            $('select').material_select();
-            $("#type").html(html)
-           
-           
-        },
-        error : function (e){      
-            console.log(e)
-        }
-    })
-
-
-    function childmenu(data,j)
-    {  
-        var idChildMenu=[];
-        var nameChildMenu=[];
-       
-      
-            for(var i =0;i<data.length;i++)
-            {  
-                if(data[i].parentid==j)
-                {
-                   
-                    idChildMenu.push(data[i].category_ID);
-                    nameChildMenu.push(data[i].category_Name);
-                   
-                   
-                }
-               
-             
-            }
-           
-            if(idChildMenu.length>0)
-            {
-                
-             
-                for(var k=0;k<idChildMenu.length;k++)
-                {   dd+="---";
-                    html+="<option value='"+idChildMenu[k]+"'>"; //Bắt đầu một dòng menu con với thẻ <li>
-                    html+=dd;
-                    html+=nameChildMenu[k];
-                    
-                    //Đệ quy, gọi lại chính hàm CreateChildMenu với tham số là idChildMenu hiện tại.
-                    childmenu(data,idChildMenu[k]);
-                    html+="</option>";
-                   
-                }
-               
-            }
-            else
-            {
-                 dd="";
-            }
-            
-            
-    }
-
-        $("#addProduct").submit(function(e){  
-            e.preventDefault();
-
-            $("#submitBnt").html('<button class="waves-effect waves-light btn-large waves-input-wrapper buttonload">\
-            <i class="fa fa-refresh fa-spin"></i> Đang thêm\
-        </button>');
-            var inputfile = document.getElementById('file');
-            
-            const formdata = new FormData()
-            formdata.append("image",inputfile.files[0])
-            fetch("https://api.imgur.com/3/image/", {
-                method: "post",
-                headers: {
-                    Authorization: "Client-ID 5c31a53dda3c8e0"
-                },
-                body: formdata
-            }).then(data => data.json()).then(data => {
-                var _data={
-                    "Product_Name":$("#name").val(),
-                    "Price": $("#price").val(),
-                    "image": data.data.link,
-                    "Category_ID":$( "#type" ).val(),
-                    "mota":$("#mota").val()
-                }
-            
-                $.ajax({
-                    type: "POST",
-                    url: link+"product/create-item",
-                    data: _data,
-                    dataType: "json",
-                    success: function(data)
-                    { 
-                        toastr.success("Thêm Thành Công")
-                        $("#submitBnt").html('<input type="submit" class="waves-effect waves-light btn-large">');
-                        $("#addProduct").trigger("reset");
-                    },
-                    error : function (e){      
-                        console.log(e)
-                    
-                    }
-                })
-            })
-        })
-    </script>
+   
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
-  
+    <script>
+        var link="https://localhost:5001/";
+
+      
+        var dd="";
+   var html="";
+       $.ajax({
+       type: "get",  
+       url: "https://localhost:5001/Categories/get-Category",
+   
+   
+       success: function(data)
+       {   
+         
+           console.log(data)
+           html+="<select>";
+               html+="<option selected disabled '>Chọn loại sản phẩm</option>";
+           for(var i =0;i<data.length;i++)
+           { 
+               
+               if(data[i].parentid==0)
+               {
+                   html+="<option disabled value='"+data[i].category_ID+"'>";
+                   html+=data[i].category_Name;
+                   html+="</option>";
+                  childmenu(data,data[i].category_ID);
+                 
+
+               }
+              
+           }
+           html+="</select>";
+           $('select').material_select();
+           $("#type").html(html)
+          
+          
+       },
+       error : function (e){      
+           console.log(e)
+       }
+   })
+
+
+   function childmenu(data,j)
+   {  
+       var idChildMenu=[];
+       var nameChildMenu=[];
+      
+     
+           for(var i =0;i<data.length;i++)
+           {  
+               if(data[i].parentid==j)
+               {
+                  
+                   idChildMenu.push(data[i].category_ID);
+                   nameChildMenu.push(data[i].category_Name);
+                  
+                  
+               }
+              
+            
+           }
+          
+           if(idChildMenu.length>0)
+           {
+               
+            
+               for(var k=0;k<idChildMenu.length;k++)
+               {   dd+="---";
+                   html+="<option value='"+idChildMenu[k]+"'>"; //Bắt đầu một dòng menu con với thẻ <li>
+                   html+=dd;
+                   html+=nameChildMenu[k];
+                   
+                   //Đệ quy, gọi lại chính hàm CreateChildMenu với tham số là idChildMenu hiện tại.
+                   childmenu(data,idChildMenu[k]);
+                   html+="</option>";
+                  
+               }
+              
+           }
+           else
+           {
+                dd="";
+           }
+           
+           
+   }
+
+       $("#addProduct").submit(function(e){  
+           e.preventDefault();
+
+           $("#submitBnt").html('<button class="waves-effect waves-light btn-large waves-input-wrapper buttonload">\
+           <i class="fa fa-refresh fa-spin"></i> Đang thêm\
+       </button>');
+           var inputfile = document.getElementById('file');
+           
+           const formdata = new FormData()
+           formdata.append("image",inputfile.files[0])
+           fetch("https://api.imgur.com/3/image/", {
+               method: "post",
+               headers: {
+                   Authorization: "Client-ID 5c31a53dda3c8e0"
+               },
+               body: formdata
+           }).then(data => data.json()).then(data => {
+               var _data={
+                   "Product_Name":$("#name").val(),
+                   "Price": $("#price").val(),
+                   "image": data.data.link,
+                   "Category_ID":$( "#type" ).val(),
+                   "mota":$("#mota").val()
+               }
+           
+               $.ajax({
+                   type: "POST",
+                   url: link+"product/create-item",
+                   data: _data,
+                   dataType: "json",
+                   success: function(data)
+                   { 
+                       toastr.success("Thêm Thành Công")
+                       $("#submitBnt").html('<input type="submit" class="waves-effect waves-light btn-large">');
+                       $("#addProduct").trigger("reset");
+                   },
+                   error : function (e){      
+                       console.log(e)
+                   
+                   }
+               })
+           })
+       })
+   </script>
 </body>
 
 

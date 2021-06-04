@@ -172,17 +172,6 @@
                                            
                                         </div>
                                         <div class="row">
-                                            <div class="file-field input-field">
-                                                <div class="btn">
-                                                    <span>File</span>
-                                                    <input id="file" required  type="file">
-                                                </div>
-                                                <div class="file-path-wrapper">
-                                                    <input  class="file-path validate" type="text">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
                                             <div id="submitBnt" class="input-field col s12">
                                                 <input type="submit" class="waves-effect waves-light btn-large">
                                             </div>
@@ -312,20 +301,10 @@
             $("#submitBnt").html('<button class="waves-effect waves-light btn-large waves-input-wrapper buttonload">\
             <i class="fa fa-refresh fa-spin"></i> Đang Thêm\
             </button>');
-            var inputfile = document.getElementById('file');
-
-            const formdata = new FormData()
-            formdata.append("image",inputfile.files[0])
-            fetch("https://api.imgur.com/3/image/", {
-                method: "post",
-                headers: {
-                    Authorization: "Client-ID 5c31a53dda3c8e0"
-                },
-                body: formdata
-            }).then(data => data.json()).then(data => {
+            
                 var _data={
                     "Category_Name": $("#name").val() ,
-                    "image":data.data.link,
+                   
                     "parentid":$('#type').val()
                 }
 
@@ -347,7 +326,7 @@
                 })
             })
                
-            })
+           
        
     </script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
