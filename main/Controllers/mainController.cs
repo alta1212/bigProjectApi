@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Configuration;
 
 namespace main.Controllers
 {
@@ -224,34 +225,28 @@ namespace main.Controllers
     public class AdminController : ControllerBase
     {
         private IadminBUS _IadminBUS;
-        
-        public AdminController(IadminBUS proBusiness)
-        {
+        private IConfiguration _config;   
+        public AdminController(IadminBUS proBusiness,IConfiguration config)
+        {   _config = config;  
             _IadminBUS = proBusiness;
         }
             [HttpPost]
             [Route("login")]
-            public ActionResult Login([FromBody] admin User)
+            public string Login([FromForm] admin User)
             {
 
                 if(_IadminBUS.login(User))
                 {
-                        var Claims = new List<Claim>
-                                {
-                                    new Claim("login", "true"),
-                                };
-
-                        var Key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SXkSqsKyNUyvGbnHs7ke2NCq8zQzNLW7mPmHbnZZ"));
-
-                        var Token = new JwtSecurityToken(
-                            "https://fbi-demo.com",
-                            "https://fbi-demo.com",
-                            Claims,
-                            expires: DateTime.Now.AddDays(1),
-                            signingCredentials: new SigningCredentials(Key, SecurityAlgorithms.HmacSha256)
-                        );
-
-                        return new OkObjectResult(new JwtSecurityTokenHandler().WriteToken(Token));
+                        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));    
+                        var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);    
+                
+                        var token = new JwtSecurityToken(_config["Jwt:Issuer"],    
+                        _config["Jwt:Issuer"],    
+                        null,    
+                        expires: DateTime.Now.AddDays(1),    
+                        signingCredentials: credentials);    
+                
+                        return new JwtSecurityTokenHandler().WriteToken(token);    
                 }
                 else
                 {
@@ -259,7 +254,13 @@ namespace main.Controllers
                 }
               
             }
-    
+            [HttpGet]    
+            [Authorize] 
+            [Route("login")]
+            public string o()
+            {
+                return "ádasdasdas";
+            }
     
     
     

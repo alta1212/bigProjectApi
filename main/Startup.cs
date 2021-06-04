@@ -7,11 +7,11 @@ using Microsoft.Extensions.Hosting;
 using BUS;
 using DAL;
 using DAL.Helper;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+//using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using System;
 
 namespace main
 {
@@ -27,30 +27,6 @@ namespace main
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var TokenValidationParameters = new TokenValidationParameters
-            {
-                ValidIssuer = "https://fbi-demo.com",
-                ValidAudience = "https://fbi-demo.com",
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SXkSqsKyNUyvGbnHs7ke2NCq8zQzNLW7mPmHbnZZ")),
-                ClockSkew = TimeSpan.Zero // remove delay of token when expire
-            };
-
-            services
-                .AddAuthentication(options =>
-                {
-                    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-                })
-                .AddJwtBearer(cfg =>
-                {
-                    cfg.RequireHttpsMetadata = false;
-                    cfg.TokenValidationParameters = TokenValidationParameters;
-                });
-
-            services.AddAuthorization(cfg =>
-                {
-                    cfg.AddPolicy("Admin", policy => policy.RequireClaim("login", "true"));
-                  
-                });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -61,8 +37,22 @@ namespace main
                 .AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
+            
             IServiceCollection serviceCollections = services.AddTransient<IDatabaseHelper, DatabaseHelper>();
-  
+                services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)    
+                    .AddJwtBearer(options =>    
+                    {    
+                        options.TokenValidationParameters = new TokenValidationParameters    
+                        {    
+                            ValidateIssuer = true,    
+                            ValidateAudience = true,    
+                            ValidateLifetime = true,    
+                            ValidateIssuerSigningKey = true,    
+                            ValidIssuer = Configuration["Jwt:Issuer"],    
+                            ValidAudience = Configuration["Jwt:Issuer"],    
+                            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))    
+                        };    
+                    });   
           
             services.AddTransient< DAL.Interface.IproductDAL , productRepository>();
             services.AddTransient<BUS.Interface.IproductBUS, productBusiness>();
@@ -72,12 +62,13 @@ namespace main
             services.AddTransient< DAL.Interface.IuserDAL , userRepository>();
             services.AddTransient<BUS.Interface.IuserBUS, userBusiness>();
 
-                   services.AddTransient< DAL.Interface.IadminDAL , adminRepository>();
+             services.AddTransient< DAL.Interface.IadminDAL , adminRepository>();
             services.AddTransient<BUS.Interface.IadminBUS, adminBusiness>();
             services.AddCors(options =>options.AddPolicy("*",
                 builder=>builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
                              
             ));
+                  
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -92,10 +83,13 @@ namespace main
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
+           
             app.UseCors("*");
+         
+           
+            app.UseAuthentication();
+            app.UseRouting();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
