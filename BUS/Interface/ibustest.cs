@@ -44,6 +44,7 @@ namespace BUS.Interface
     }
     public partial interface IadminBUS
     {
-      bool login(admin a);
+      admin login(admin a);
+       List<admin> getalladmin();
     }
 }

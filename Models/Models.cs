@@ -66,6 +66,7 @@ namespace Models
         public string OrderDetail_OrderID { get; set; }
 
         public string OrderDetail_Name { get; set; }
+         public string OrderDetail_Image { get; set; }
 
         public string Quantity { get; set; }
 
@@ -94,5 +95,12 @@ namespace Models
         public string Admin_email { get; set; }
 
         public string Admin_password { get; set; }
+
+        public string Admin_type { get; set; }
+        public string Admin_Phone { get; set; }
+        public string Admin_Name { get; set; }
+        public string Admin_Image { get; set; }
+        public string token { get; set; }
+        
     }
 }

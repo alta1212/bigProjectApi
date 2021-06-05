@@ -242,7 +242,7 @@ Cart.checkout =function()
           success: function(data)
           { 
               Cart.empty();
-              window.location.href="/index.html";
+              window.location.href="index.html";
           },
           error : function (e){      
               console.log(e)

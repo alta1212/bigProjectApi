@@ -1,0 +1,95 @@
+<html lang="en"><head>
+    <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
+    <!--== META TAGS ==-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--== FAV ICON ==-->
+    <link rel="shortcut icon" href="images/fav.ico">
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
+
+    <!-- FONT-AWESOME ICON CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!--== ALL CSS FILES ==-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mob.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/materialize.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div class="blog-login">
+        <div class="blog-login-in">
+            <form id="login">
+                <img src="images/logo.png" alt="">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="first_name1" type="email" name="Admin_email" class="validate">
+                        <label for="first_name1" class="">User Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="last_name" type="password" name="Admin_password" class="validate">
+                        <label for="last_name" class="">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button class="waves-effect waves-light btn-large btn-log-in" >Login</button>
+                    </div>
+                </div>
+                <a href="forgot.html" class="for-pass">Forgot Password?</a>
+            </form>
+        </div>
+    </div>
+
+    <!--======== SCRIPT FILES =========-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <!-- <script src="js/custom.js"></script> -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <Script>
+    $("#login").submit(function(e){
+      
+      e.preventDefault();
+         $.ajax({
+              type: "post",  
+              url: "https://localhost:5001/Admin/login",
+              data:$(this).serialize(),
+              success: function(data)
+              {    
+                    if(data==null)
+                    {
+                        toastr.error("Email or password incorrect")
+                    }
+                    else
+                    {  
+                        console.log(data)
+                        localStorage.setItem("token",data.token)
+                        localStorage.setItem("admin_Name",data.admin_Name)
+                        localStorage.setItem("admin_Image",data.admin_Image)
+                        localStorage.setItem("admin_type",data.admin_type)
+                        window.location.href="index.html"
+                    }
+              },
+              error : function (e){      
+                  console.log(e)
+              
+              }
+      })
+    })
+    </Script>
+
+<div class="hiddendiv common"></div></body></html>

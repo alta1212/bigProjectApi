@@ -308,7 +308,8 @@ namespace DAL
                 "@OrderDetail_OrderID", j,
                 "@OrderDetail_Name",i.label,
                 "@Quantity",i.quantity,
-                "@total",int.Parse(i.price)*int.Parse(i.quantity)
+                "@total",int.Parse(i.price)*int.Parse(i.quantity),
+                "@image",i.image
             );
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
@@ -361,7 +362,7 @@ namespace DAL
             _dbHelper = dbHelper;
         }
 
-        public bool login(admin a)
+        public admin login(admin a)
         {
              string msgError = "";
             try
@@ -374,15 +375,35 @@ namespace DAL
                     throw new Exception(msgError);
                     if(dt.Rows.Count>0)
                     {
-                        return true;
+                        return dt.ConvertTo<admin>().FirstOrDefault();
                     }
-                    return false;
+                    return null;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
+
+        public List<admin> getall()
+        {
+           string msgError = "";
+            
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "GETALL_ADMIN");
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<admin>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        
     }
 
 }

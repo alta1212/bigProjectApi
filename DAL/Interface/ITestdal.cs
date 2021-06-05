@@ -41,6 +41,7 @@ namespace DAL.Interface
         }   
         public interface IadminDAL
         {
-                bool login(admin a);
+                admin login(admin a);
+                List<admin> getall();
         }
 }

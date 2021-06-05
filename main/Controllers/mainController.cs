@@ -38,7 +38,7 @@ namespace main.Controllers
         {
             return _productBusiness.Getproduct();
         }
-
+        [Authorize] 
         [Route("create-item")]
         [HttpPost]
         public Product CreateItem([FromForm] Product model)
@@ -46,7 +46,7 @@ namespace main.Controllers
             _productBusiness.Create(model);
             return model;
         } 
-
+        [Authorize]
         [Route("update-item")]
         [HttpPost]
         public Product updateItem([FromForm] Product model)
@@ -77,7 +77,7 @@ namespace main.Controllers
             }
             
         }
-
+        [Authorize]
         [Route("delete/{id}")]
         [HttpGet]
         public bool delete(string id)
@@ -111,7 +111,7 @@ namespace main.Controllers
         {
             return _CategoriesBusiness.GetCategories();
         }
-      
+        [Authorize]
         [Route("create-item")]
         [HttpPost]
         public Categories CreateItem([FromForm] Categories model)
@@ -119,6 +119,7 @@ namespace main.Controllers
             _CategoriesBusiness.Create(model);
             return model;
         } 
+        [Authorize]
         [Route("update-item")]
         [HttpPost]
         public Categories UpdateItem([FromForm] Categories model)
@@ -196,7 +197,7 @@ namespace main.Controllers
             _userBusiness.orderDetails(model);
             return model;
         }
-
+        [Authorize]
          [Route("allorder")]
         [HttpGet]
         public List<order> getallorder()
@@ -205,6 +206,8 @@ namespace main.Controllers
            
             return  _userBusiness.getallorder();;
         }
+      //  [Authorize(Roles = "admin")]
+        [Authorize]
         [Route("orderdetail/{id}")]
         [HttpGet]
         public List<OrderDetails> all(string id)
@@ -230,37 +233,49 @@ namespace main.Controllers
         {   _config = config;  
             _IadminBUS = proBusiness;
         }
-            [HttpPost]
-            [Route("login")]
-            public string Login([FromForm] admin User)
-            {
-
-                if(_IadminBUS.login(User))
-                {
-                        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));    
+        public string token(string type)
+        {
+                 var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));    
                         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);    
-                
+                        var Claims = new List<Claim>
+                        {
+                            new Claim(ClaimTypes.Role, type),
+                        };
                         var token = new JwtSecurityToken(_config["Jwt:Issuer"],    
                         _config["Jwt:Issuer"],    
-                        null,    
+                        Claims,    
                         expires: DateTime.Now.AddDays(1),    
                         signingCredentials: credentials);    
                 
                         return new JwtSecurityTokenHandler().WriteToken(token);    
+        }
+
+
+        [HttpPost]
+        [Route("login")]
+        public admin Login([FromForm] admin User)
+        {
+                var user=_IadminBUS.login(User);
+                if(user!=null)
+                {
+                       user.token= token(user.Admin_type);
+                       return user;
                 }
                 else
                 {
                         return null;
                 }
               
-            }
-            [HttpGet]    
-            [Authorize] 
-            [Route("login")]
-            public string o()
-            {
-                return "ádasdasdas";
-            }
+        }
+        
+        [HttpGet]
+        [Route("getall")]
+        [Authorize(Roles = "admin")]
+        public IEnumerable<Models.admin>  getall()
+        {
+              return _IadminBUS.getalladmin();
+              
+        }
     
     
     

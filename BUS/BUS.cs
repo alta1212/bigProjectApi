@@ -165,7 +165,12 @@ namespace BUS
             _res = News;       
         }
 
-        public bool login(admin a)
+        public List<admin> getalladmin()
+        {
+            return _res.getall();
+        }
+
+        public admin login(admin a)
         {
             return _res.login(a);
         }
