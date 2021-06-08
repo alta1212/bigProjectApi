@@ -43,5 +43,12 @@ namespace DAL.Interface
         {
                 admin login(admin a);
                 List<admin> getall();
+                public int delete(int s);
+                 admin getbyid(int a);
+                 int create(admin a);
+                 int orderdetailupdate( IEnumerable<OrderDetails> s);
         }
+
+        
+     
 }

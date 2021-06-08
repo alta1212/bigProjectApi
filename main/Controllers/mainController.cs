@@ -278,6 +278,36 @@ namespace main.Controllers
         }
     
     
-    
-       
+        [HttpGet]
+        [Authorize(Roles = "admin")]
+        [Route("delete/{id}")]
+        public int delete(int id)
+        {
+            return _IadminBUS.delete(id);
+        }
+        [HttpGet]
+        [Authorize(Roles = "admin")]
+        [Route("admin/{id}")]
+        public admin getbyid(int id)
+        {
+               return _IadminBUS.byid(id);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "admin")]
+        [Route("create")]
+        public int create([FromForm] admin a)
+        {
+
+               return _IadminBUS.create(a);
+        }
+
+        [HttpPost]
+        [Authorize]
+        [Route("updateorder")]
+        public int update([FromBody] IEnumerable<OrderDetails> model)
+        {
+                
+               return _IadminBUS.orderdetailupdate(model);
+        }
     }

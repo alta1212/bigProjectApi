@@ -159,6 +159,10 @@ namespace BUS
     public class adminBusiness:BUS.Interface.IadminBUS
     {
          private IadminDAL _res;
+         public  admin byid(int a)
+         {
+             return _res.getbyid(a);
+         }
         
         public adminBusiness(IadminDAL  News)
         {
@@ -173,6 +177,19 @@ namespace BUS
         public admin login(admin a)
         {
             return _res.login(a);
+        }
+        public int delete(int a)
+        {
+            return _res.delete(a);
+        }
+        public  int create(admin a)
+        {
+            return _res.create(a);
+        }
+
+        public   int orderdetailupdate( IEnumerable<OrderDetails> s)
+        {
+            return _res.orderdetailupdate(s);
         }
     }
 }

@@ -2,14 +2,15 @@
 <html lang="en">
 
 
-<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/user-all.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 May 2021 06:36:34 GMT -->
 <head>
-    <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
+    <title>Thêm sản phẩm</title>
     <!--== META TAGS ==-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--== FAV ICON ==-->
     <link rel="shortcut icon" href="images/fav.ico">
+
+    <!-- GOOGLE FONTS -->
 
 
     <!-- FONT-AWESOME ICON CSS -->
@@ -20,27 +21,18 @@
     <link rel="stylesheet" href="css/mob.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/materialize.css" />
-
-
-    
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+    <!-- cusstom js -->
 </head>
 
 <body>
-    <!--== MAIN CONTRAINER ==-->
+
     <div class="container-fluid sb1">
         <div class="row">
             <!--== LOGO ==-->
             <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
                 <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
                 <a href="#" class="atab-menu"><i class="fa fa-bars tab-menu" aria-hidden="true"></i></a>
-                <a href="index.html" class="logo"><img src="images/logo1.png" alt="" />
+                <a href="index.html" class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Fake_Taxi_logo.svg/1280px-Fake_Taxi_logo.svg.png" alt="" />
                 </a>
             </div>
             <!--== SEARCH ==-->
@@ -168,69 +160,60 @@
                         <div class="col-md-12">
                             <div class="box-inn-sp">
                                 <div class="inn-title">
-                                    <h4>Sản phẩm</h4>
-                                
-                                    <a class="dropdown-button drop-down-meta" href="#" data-activates="dr-users"><i class="material-icons">more_vert</i></a>
-                                    <ul id="dr-users" class="dropdown-content">
-                                        <li><a href="user-add.html">Add New</a>
-                                        </li>
-                                        <li><a href="user-edit.html">Edit</a>
-                                        </li>
-                                        <li><a href="#!">Update</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li><a href="#!"><i class="material-icons">delete</i>Delete</a>
-                                        </li>
-                                        <li><a href="user-view.html"><i class="material-icons">subject</i>View All</a>
-                                        </li>
-                                    </ul>
-
-                                    <!-- Dropdown Structure -->
+                                    <h4>Thêm nhân viên</h4>
 
                                 </div>
-                               
                                 <div class="tab-inn">
-                                    <div class="table-responsive table-desi">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>Tên Sản phẩm</th>
-                                                    <th>Ảnh sản phẩm</th>
-                                                    <th>Số lượng</th>
-                                                    <th>Tổng tiền</th>
-                                                   
-                                                    
-                                                </tr>
-                                            </thead>
-                                            <tbody id="listProduct">
-                                                
-                                             
-                                              
-                                            </tbody>
-                                           
-                                        </table> 
-                                        <div style="float: right;" class="">
-                                                <div  class="input-field col s12">
-                                                    <button id="submitBnt" class="waves-effect waves-light btn-large">Cập nhật</Button>
-                                                </div>
+                                    <form id="addProduct">
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input required id="name" type="text" name="name" class="validate">
+                                                <label for="name">Tên Nhân viên</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <select id="type" required>
+                                                    <option value="" disabled selected>Chọn Chức vụ</option>
+                                                    <option value="admin"  selected>Admin</option>
+                                                    <option value="staff"  selected>Staff</option>
+                                                </select>
+                                                <label>Chức vụ</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <nav  style="color: #fff; 
-                                    background-color:#fff; 
-                                     width: 100%; 
-                                     height: 56px; 
-                                     line-height: 56px;
-                                     box-shadow:0 0 0" aria-label="...">
-                                        <ul id="pageList" class="pagination">
-   
-                                        </ul>
-                                      </nav>
+                                        <div class="row">
+                                            <div class="input-field col s6">
+                                                <input required id="email" type="email" class="validate">
+                                                <label for="email">Email (mật khẩu mặc định 123)</label>
+                                            </div>
+                                            <div class="input-field col s6">
+                                                <input required id="phone" type="text" class="validate">
+                                                <label for="phone">Số điện thoại</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="file-field input-field">
+                                                <div class="btn">
+                                                    <span>File</span>
+                                                    <input id="file" required  type="file">
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                    <input  class="file-path validate" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="row">
+                                            <div id="submitBnt" class="input-field col s12">
+                                                <input type="submit" class="waves-effect waves-light btn-large">
+                                            </div>
+                                        </div>
+
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            <!-- </div> -->
+            </div>
         </div>
     </div>
 
@@ -255,109 +238,62 @@
 
     <!--======== SCRIPT FILES =========-->
     <script src="js/jquery.min.js"></script>
+   
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
-    <script>
-        function changeqty(elm)
-        {
-            console.log(elm.parents().eq(1).find("td span.total a").html(elm.parents().eq(1).find("td a.pro_price").html()*elm.val()))
-
- 
-        }
-
-
-
-
-        var link="https://localhost:5001/";
-        var id = location.search.slice(1).split("&")[0].split("=")[1]
-          $(".page-item").removeClass("active")
-            $.ajax({
-            type: "get",  
-            url: link+"user/orderdetail/"+id,
-            headers: {
-                        Authorization: 'Bearer '+localStorage.getItem("token")
-                    },
-            success: function(data)
-            {   
-                var html="";
-                console.log(data)
-                for(var i=0;i<data.length;i++)
-                {   
-                   // var price =parseFloat(data[i].price, 10).toFixed(1).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString()+" VNĐ";
-                    html+='<tr>\
-                        <td><a href="#"><span  class="list-enq-name name">'+data[i].orderDetail_Name+'</span></a>\
-                                                    </td>\
-                                                    <td><span class="list-img"><img src="'+data[i].orderDetail_Image+'" alt=""></span>\
-                                                    </td>\
-                                                    <td style="display: none;" ><a class="pro_price" >'+data[i].price+'</a>\
-                                                    </td>\
-                                                    <td class="get"><input id-detail="'+data[i].orderDetail_ID+'" class="pro_quantity" onchange="changeqty($(this))" type="number" value="'+data[i].quantity+'">\
-                                                    </td>\
-                                                    <td><span class="list-enq-name total"><a style="color: black;">'+data[i].total+'</a> $</span>\
-                                                    </td>\
-                                                    <td><a onclick="deletethisrow($(this))" href="#"><span class="list-enq-name">X</span></a>\
-                                                    </td>\
-                                                </tr>'
-                
-                }
-            
-              
-                $("#listProduct").html(html);
-            },
-            error : function (e){      
-                console.log(e)
-            
-            }
-        })
-       
-        function deletethisrow(e)
-        {
-            console.log(e.parents().eq(1).remove())
-        }
-        
-        $("#submitBnt").click(function()
-        {
-            var model = [];
-            $("table #listProduct tr").each(function() {
-
-                            var k={
-                                "OrderDetail_ID":$(this).find("td input").attr("id-detail"),
-                                "Quantity":$(this).find("td input").val(),
-                                "OrderDetail_OrderID":id,
-                                "OrderDetail_Name":$(this).find("td span.name").html(),
-                                "OrderDetail_Image":$(this).find("td span.list-img img").attr("src"),
-                                "total":$(this).find("td span.total a").html(),
-                            }
-                            model.push(k)
-                        });
-                        console.log(JSON.stringify(model))
-          $.ajax({
-          type: "POST",
-          url: "https://localhost:5001/Admin/updateorder",
-          data: JSON.stringify(model),
-          dataType: "json",
-          contentType: 'application/json; charset=utf-8',
-          headers: {
-                        Authorization: 'Bearer '+localStorage.getItem("token")
-                    },
-          success: function(data)
-          { 
-            toastr.success("cập nhật đơn hàng thành công")
-          },
-          error : function (e){      
-              console.log(e)
-          
-          }
-          })
-        })
-       
-  </script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
-    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <script>
+        var link="https://localhost:5001/";
+     $("#addProduct").submit(function(e){  
+           e.preventDefault();
+
+           $("#submitBnt").html('<button class="waves-effect waves-light btn-large waves-input-wrapper buttonload">\
+           <i class="fa fa-refresh fa-spin"></i> Đang thêm\
+       </button>');
+           var inputfile = document.getElementById('file');
+           
+           const formdata = new FormData()
+           formdata.append("image",inputfile.files[0])
+           fetch("https://api.imgur.com/3/image/", {
+               method: "post",
+               headers: {
+                   Authorization: "Client-ID 5c31a53dda3c8e0"
+               },
+               body: formdata
+           }).then(data => data.json()).then(data => {
+               var _data={
+                   "Admin_email":$("#email").val(),
+                   "Admin_type": $("#type").val(),
+                   "Admin_Image": data.data.link,
+                   "Admin_Phone":$( "#phone" ).val(),
+                   "Admin_Name":$("#name").val()
+               }
+           
+               $.ajax({
+                   type: "POST",
+                   url: link+"admin/create",
+                   data: _data,
+                   headers: {
+                        Authorization: 'Bearer '+localStorage.getItem("token")
+                    },
+                   dataType: "json",
+                   success: function(data)
+                   { 
+                       toastr.success("Thêm Thành Công")
+                       $("#submitBnt").html('<input type="submit" class="waves-effect waves-light btn-large">');
+                       $("#addProduct").trigger("reset");
+                   },
+                   error : function (e){      
+                       console.log(e)
+                   }
+               })
+           })
+       })
+   </script>
 </body>
 
 
-<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/user-all.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 May 2021 06:36:36 GMT -->
+<!-- Mirrored from rn53themes.net/themes/demo/lava-admin/user-add.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 May 2021 06:36:33 GMT -->
 </html>

@@ -309,7 +309,8 @@ namespace DAL
                 "@OrderDetail_Name",i.label,
                 "@Quantity",i.quantity,
                 "@total",int.Parse(i.price)*int.Parse(i.quantity),
-                "@image",i.image
+                "@image",i.image,
+                "@price",i.price
             );
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
@@ -403,7 +404,94 @@ namespace DAL
 
         }
 
+        public int delete(int s)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "Delete_admin",
+                "@id",s
+                );
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return 0;
+        }
+        public  admin getbyid(int a)
+        {
+               string msgError = "";
+            try
+            {
+                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError,"adminbyid"
+                 ,"@id",a);
+                
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                    if(dt.Rows.Count>0)
+                    {
+                        return dt.ConvertTo<admin>().FirstOrDefault();
+                    }
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int create(admin a)
+        {
+            string msgError = "";
+            try
+            {
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "create_admin",
+                "@admin_name",a.Admin_Name,
+                "@admin_phone",a.Admin_Phone,
+                "@admin_type",a.Admin_type,
+                "@admin_iamge",a.Admin_Image,
+                "@admin_email",a.Admin_email
+                );
+                if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
+                {
+                    throw new Exception(Convert.ToString(result) + msgError);
+                }
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         
+        }
+
+
+
+        public int orderdetailupdate( IEnumerable<OrderDetails> s)
+        {  string msgError = "";
+             _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "deleteorderdetail",
+                "@orderid", s.FirstOrDefault().OrderDetail_OrderID
+            );
+            
+            foreach(OrderDetails  i in s)
+            {
+              
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "oderdetail",
+                                "@OrderDetail_OrderID", i.OrderDetail_OrderID,
+                                "@OrderDetail_Name",i.OrderDetail_Name,
+                                "@Quantity",i.Quantity,
+                                "@total",i.total,
+                                "@image",i.OrderDetail_Image
+                            );
+            }
+            return 1;
+        }
     }
 
 }

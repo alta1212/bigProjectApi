@@ -5,9 +5,6 @@ $(document).ready(function() {
         localStorage.removeItem("token");
         window.location.reload()
     })
-
-
-
     //LEFT MOBILE MENU OPEN
     $(".atab-menu").on('click', function() {
         $(".sb2-1").css("left", "0");
@@ -58,6 +55,7 @@ $(document).ready(function() {
     });
 
 });
+
 
 if(!localStorage.getItem("token"))
 {

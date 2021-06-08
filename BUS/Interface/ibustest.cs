@@ -46,5 +46,9 @@ namespace BUS.Interface
     {
       admin login(admin a);
        List<admin> getalladmin();
+        public int delete(int a);
+        admin byid(int a);
+        int create(admin a);
+          int orderdetailupdate( IEnumerable<OrderDetails> s);
     }
 }
