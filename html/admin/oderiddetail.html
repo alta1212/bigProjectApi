@@ -327,6 +327,7 @@
                                 "OrderDetail_Name":$(this).find("td span.name").html(),
                                 "OrderDetail_Image":$(this).find("td span.list-img img").attr("src"),
                                 "total":$(this).find("td span.total a").html(),
+                                "price":$(this).find("td a.pro_price").html()
                             }
                             model.push(k)
                         });

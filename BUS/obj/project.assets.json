@@ -1304,35 +1304,37 @@
     ]
   },
   "packageFolders": {
-    "/home/tuan/.nuget/packages/": {}
+    "C:\\Users\\welcome\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/tuan/Màn hình nền/bigProjectApi/BUS/BUS.csproj",
+      "projectUniqueName": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\BUS\\BUS.csproj",
       "projectName": "BUS",
-      "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/BUS/BUS.csproj",
-      "packagesPath": "/home/tuan/.nuget/packages/",
-      "outputPath": "/home/tuan/Màn hình nền/bigProjectApi/BUS/obj/",
+      "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\BUS\\BUS.csproj",
+      "packagesPath": "C:\\Users\\welcome\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\BUS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/tuan/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\welcome\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj": {
-              "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj"
+            "C:\\Users\\welcome\\Desktop\\bigProjectApi\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\DAL\\DAL.csproj"
             },
-            "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj": {
-              "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj"
+            "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj"
             }
           }
         }
@@ -1367,7 +1369,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

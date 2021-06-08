@@ -478,17 +478,19 @@ namespace DAL
              _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "deleteorderdetail",
                 "@orderid", s.FirstOrDefault().OrderDetail_OrderID
             );
-            
+       
             foreach(OrderDetails  i in s)
             {
               
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "oderdetail",
+                              var o=  _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "oderdetail",
                                 "@OrderDetail_OrderID", i.OrderDetail_OrderID,
                                 "@OrderDetail_Name",i.OrderDetail_Name,
                                 "@Quantity",i.Quantity,
                                 "@total",i.total,
-                                "@image",i.OrderDetail_Image
+                                "@image",i.OrderDetail_Image,
+                                "@price",i.price
                             );
+                          
             }
             return 1;
         }

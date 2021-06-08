@@ -1,36 +1,38 @@
 {
   "format": 1,
   "restore": {
-    "/home/tuan/Màn hình nền/bigProjectApi/main/main.csproj": {}
+    "C:\\Users\\welcome\\Desktop\\bigProjectApi\\main\\main.csproj": {}
   },
   "projects": {
-    "/home/tuan/Màn hình nền/bigProjectApi/BUS/BUS.csproj": {
+    "C:\\Users\\welcome\\Desktop\\bigProjectApi\\BUS\\BUS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tuan/Màn hình nền/bigProjectApi/BUS/BUS.csproj",
+        "projectUniqueName": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\BUS\\BUS.csproj",
         "projectName": "BUS",
-        "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/BUS/BUS.csproj",
-        "packagesPath": "/home/tuan/.nuget/packages/",
-        "outputPath": "/home/tuan/Màn hình nền/bigProjectApi/BUS/obj/",
+        "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\BUS\\BUS.csproj",
+        "packagesPath": "C:\\Users\\welcome\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\BUS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/tuan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\welcome\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj": {
-                "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj"
+              "C:\\Users\\welcome\\Desktop\\bigProjectApi\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\DAL\\DAL.csproj"
               },
-              "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj": {
-                "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj"
+              "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj"
               }
             }
           }
@@ -65,34 +67,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj": {
+    "C:\\Users\\welcome\\Desktop\\bigProjectApi\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj",
+        "projectUniqueName": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj",
-        "packagesPath": "/home/tuan/.nuget/packages/",
-        "outputPath": "/home/tuan/Màn hình nền/bigProjectApi/DAL/obj/",
+        "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\welcome\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/tuan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\welcome\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj": {
-                "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj"
+              "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj"
               }
             }
           }
@@ -135,92 +139,42 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj": {
+    "C:\\Users\\welcome\\Desktop\\bigProjectApi\\main\\main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj",
-        "projectName": "Models",
-        "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj",
-        "packagesPath": "/home/tuan/.nuget/packages/",
-        "outputPath": "/home/tuan/Màn hình nền/bigProjectApi/Models/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/home/tuan/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/home/tuan/Màn hình nền/bigProjectApi/main/main.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/home/tuan/Màn hình nền/bigProjectApi/main/main.csproj",
+        "projectUniqueName": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\main\\main.csproj",
         "projectName": "main",
-        "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/main/main.csproj",
-        "packagesPath": "/home/tuan/.nuget/packages/",
-        "outputPath": "/home/tuan/Màn hình nền/bigProjectApi/main/obj/",
+        "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\main\\main.csproj",
+        "packagesPath": "C:\\Users\\welcome\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/tuan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\welcome\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/home/tuan/Màn hình nền/bigProjectApi/BUS/BUS.csproj": {
-                "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/BUS/BUS.csproj"
+              "C:\\Users\\welcome\\Desktop\\bigProjectApi\\BUS\\BUS.csproj": {
+                "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\BUS\\BUS.csproj"
               },
-              "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj": {
-                "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj"
+              "C:\\Users\\welcome\\Desktop\\bigProjectApi\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\DAL\\DAL.csproj"
               },
-              "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj": {
-                "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj"
+              "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj": {
+                "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj"
               }
             }
           }
@@ -270,7 +224,61 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj",
+        "projectName": "Models",
+        "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\welcome\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\welcome\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
