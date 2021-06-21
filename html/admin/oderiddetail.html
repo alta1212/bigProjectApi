@@ -212,9 +212,42 @@
                                         <div style="float: right;" class="">
                                                 <div  class="input-field col s12">
                                                     <button id="submitBnt" class="waves-effect waves-light btn-large">Cập nhật</Button>
+                                                    <button  data-toggle="modal" data-target="#exampleModal"  class="waves-effect waves-light btn-large">Thêm sản phẩm</Button>
                                                 </div>
+                                              
                                         </div>
                                     </div>
+                                    <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h3 class="modal-title" id="exampleModalLabel">Thêm sản phẩm vào đơn hàng</h3>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <select id="type" required>
+                                                        <option value="" disabled selected>Chọn sản phẩm để thêm</option>
+                                                       
+                                                    </select>
+                                                    <label>Chọn sản phẩm</label>
+                                                </div>
+                                              
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" id="addBnt" class="btn btn-secondary" >Thêm</button>
+                                       
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+  
                                     <nav  style="color: #fff; 
                                     background-color:#fff; 
                                      width: 100%; 
@@ -264,6 +297,40 @@
 
  
         }
+
+            var html="";
+            $.ajax({
+            type: "get",  
+            url: "https://localhost:5001/product/get-all",
+        
+        
+            success: function(data)
+            {   
+            
+                console.log(data)
+                html+="<select>";
+                   
+                for(var i =0;i<data.length;i++)
+                { 
+                    
+                   
+                        html+="<option data-name='"+data[i].product_Name+"' data-price='"+data[i].price+"' data-image='"+data[i].image+" '>";
+                        html+=data[i].product_Name;
+                        html+="</option>";
+               
+                
+                }
+                html+="</select>";
+
+                $("#type").html(html)
+                console.log(html)
+            
+            },
+            error : function (e){      
+                console.log(e)
+            }
+        })
+
 
 
 
@@ -352,7 +419,28 @@
           })
         })
        
-  </script>
+ 
+        $("#addBnt").click(function(){
+            var k=$("#type :selected");
+            console.log(k.data())
+          var htmloption='<tr>\
+                        <td><a href="#"><span  class="list-enq-name name">'+k.data("name")+'</span></a>\
+                                                    </td>\
+                                                    <td><span class="list-img"><img src="'+k.data("image")+'" alt=""></span>\
+                                                    </td>\
+                                                    <td style="display: none;" ><a class="pro_price" >'+k.data("price")+'</a>\
+                                                    </td>\
+                                                    <td class="get"><input id-detail="" class="pro_quantity" onchange="changeqty($(this))" type="number" value="1">\
+                                                    </td>\
+                                                    <td><span class="list-enq-name total"><a style="color: black;">'+k.data("price")+'</a> $</span>\
+                                                    </td>\
+                                                    <td><a onclick="deletethisrow($(this))" href="#"><span class="list-enq-name">X</span></a>\
+                                                    </td>\
+                                                </tr>'
+            $("#listProduct").append(htmloption);                             
+        })
+ 
+ </script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>

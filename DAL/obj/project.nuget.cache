@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "TSodN6IK3mgM7kVarKB9FY+NmtFM/M9vU/E0ShODsS6njQipqCQb3W83sm6ia5BCWJEO/xI0gQ821qL91e3VLg==",
+=======
+  "dgSpecHash": "dIWtfynVsPf23+qKrUoFcQP+14+2DlSQPb/DmCKGM8WNemZgmgF10/aNo/Bz1zCZjxD5BQVtPUIxn2iN3IqLrQ==",
+>>>>>>> a2fa5ac352347a8ea62d82819d0b65f872c7d448
   "success": true,
   "projectFilePath": "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj",
   "expectedPackageFiles": [

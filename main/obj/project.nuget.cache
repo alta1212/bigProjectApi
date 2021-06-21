@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "xGQ25fIDSGn42QNqTTImU2wVTPCptkM6T90MQ1eAtKWfbkfBKB8ivrP4GmZs+XsWyvGNVFGgLhiuNOYN38xEHA==",
+=======
+  "dgSpecHash": "2wvHUnwYNCOGU3RJiRuoHT2dQqSXF66xBvqkDZrMTxT15MKAx4bu/uwPsIYCkMAOvQAy/0TGStEsBDE83WFCVA==",
+>>>>>>> a2fa5ac352347a8ea62d82819d0b65f872c7d448
   "success": true,
   "projectFilePath": "/home/tuan/Màn hình nền/bigProjectApi/main/main.csproj",
   "expectedPackageFiles": [

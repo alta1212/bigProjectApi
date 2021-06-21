@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Z+od6l8QKCjixsO5AJlZfqfJzr4meUb7Z81wCJ/GDxVU/1zxZ/DHBlcgkgtYf58cJuu8nzT0deU2Uu9AAvsxmA==",
+=======
+  "dgSpecHash": "5rAoWWr94w5FZgmbwPmJiQ/lqQYxPJP9RfjZd0yGqjPpf8+LqDJEN87u6AB4aVdm0LGf4jWLJivXoca2tZtP7A==",
+>>>>>>> a2fa5ac352347a8ea62d82819d0b65f872c7d448
   "success": true,
   "projectFilePath": "/home/tuan/Màn hình nền/bigProjectApi/BUS/BUS.csproj",
   "expectedPackageFiles": [
