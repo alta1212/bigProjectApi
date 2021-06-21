@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cbbOJsV5wDxz7EDrRx8cS7Udt3GbNrVPsHedtyflKvNU7AYrFJzvnTmCdMA/mwrQ7IefsHmoxqaT5bqZ8XFAiA==",
+  "dgSpecHash": "r8hRNfYWDa/v/JsZ7C8o2WLq4kpfYNRbADHSD8YG1WT5dZva5NHHQRo5KWDf9W5cjGYAFIRqtohmnSo87Dlkpg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj",
+  "projectFilePath": "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

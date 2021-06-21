@@ -478,9 +478,9 @@ namespace DAL
              _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "deleteorderdetail",
                 "@orderid", s.FirstOrDefault().OrderDetail_OrderID
             );
-       
+        int total=0;
             foreach(OrderDetails  i in s)
-            {
+            {   total+=int.Parse(i.total);
               
                               var o=  _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "oderdetail",
                                 "@OrderDetail_OrderID", i.OrderDetail_OrderID,
@@ -492,6 +492,8 @@ namespace DAL
                             );
                           
             }
+             string query=string.Format("update ORDERs set ORDERs.total={0}",total);
+            _dbHelper.ExecuteNoneQuery(query);
             return 1;
         }
     }

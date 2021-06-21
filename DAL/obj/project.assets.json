@@ -604,34 +604,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\welcome\\.nuget\\packages\\": {}
+    "/home/tuan/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\DAL\\DAL.csproj",
+      "projectUniqueName": "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\DAL\\DAL.csproj",
-      "packagesPath": "C:\\Users\\welcome\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\DAL\\obj\\",
+      "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/DAL/DAL.csproj",
+      "packagesPath": "/home/tuan/.nuget/packages/",
+      "outputPath": "/home/tuan/Màn hình nền/bigProjectApi/DAL/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\welcome\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/tuan/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\welcome\\Desktop\\bigProjectApi\\Models\\Models.csproj"
+            "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj": {
+              "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj"
             }
           }
         }
@@ -674,7 +672,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
       }
     }
   }
