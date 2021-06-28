@@ -291,7 +291,8 @@ namespace DAL
         static int id=3;
         public bool Createorder(order model)
         {
-            string query=string.Format("insert into Orders (Order_Name,CreatedDate,Phone,Address,total)  OUTPUT INSERTED.Order_ID VALUES (N'{0}',N'{1}',N'{2}',N'{3}',{4})",model.Order_Name,DateTime.Today,model.Phone,model.Address,model.total);
+            DateTime dateAndTime = DateTime.Now;
+            string query=string.Format("insert into Orders (Order_Name,CreatedDate,Phone,Address,total)  OUTPUT INSERTED.Order_ID VALUES (N'{0}',N'{1}',N'{2}',N'{3}',{4})",model.Order_Name,dateAndTime.ToString("dd/MM/yyyy"),model.Phone,model.Address,model.total);
            id= _dbHelper.getLastId(query);
             
              return true;
@@ -492,7 +493,7 @@ namespace DAL
                             );
                           
             }
-             string query=string.Format("update ORDERs set ORDERs.total={0}",total);
+             string query=string.Format("update ORDERs set ORDERs.total={0} where Order_ID ={1}" ,total,s.FirstOrDefault().OrderDetail_OrderID);
             _dbHelper.ExecuteNoneQuery(query);
             return 1;
         }

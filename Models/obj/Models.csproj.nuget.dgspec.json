@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj": {}
+    "C:\\Users\\tuan anh\\Desktop\\bigProjectApi\\Models\\Models.csproj": {}
   },
   "projects": {
-    "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj": {
+    "C:\\Users\\tuan anh\\Desktop\\bigProjectApi\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj",
+        "projectUniqueName": "C:\\Users\\tuan anh\\Desktop\\bigProjectApi\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "/home/tuan/Màn hình nền/bigProjectApi/Models/Models.csproj",
-        "packagesPath": "/home/tuan/.nuget/packages/",
-        "outputPath": "/home/tuan/Màn hình nền/bigProjectApi/Models/obj/",
+        "projectPath": "C:\\Users\\tuan anh\\Desktop\\bigProjectApi\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\tuan anh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tuan anh\\Desktop\\bigProjectApi\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/tuan/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\tuan anh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -52,11 +52,7 @@
               "privateAssets": "all"
             }
           },
-<<<<<<< HEAD
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
-=======
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.204\\RuntimeIdentifierGraph.json"
->>>>>>> a2fa5ac352347a8ea62d82819d0b65f872c7d448
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

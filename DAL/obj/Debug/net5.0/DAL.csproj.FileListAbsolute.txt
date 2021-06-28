@@ -1,90 +1,15 @@
-/home/tuan_anh/Desktop/api/DAL/bin/Debug/net5.0/DAL.deps.json
-/home/tuan_anh/Desktop/api/DAL/bin/Debug/net5.0/DAL.dll
-/home/tuan_anh/Desktop/api/DAL/bin/Debug/net5.0/ref/DAL.dll
-/home/tuan_anh/Desktop/api/DAL/bin/Debug/net5.0/DAL.pdb
-/home/tuan_anh/Desktop/api/DAL/bin/Debug/net5.0/Models.dll
-/home/tuan_anh/Desktop/api/DAL/bin/Debug/net5.0/Models.pdb
-/home/tuan_anh/Desktop/api/DAL/obj/Debug/net5.0/DAL.csprojAssemblyReference.cache
-/home/tuan_anh/Desktop/api/DAL/obj/Debug/net5.0/DAL.GeneratedMSBuildEditorConfig.editorconfig
-/home/tuan_anh/Desktop/api/DAL/obj/Debug/net5.0/DAL.AssemblyInfoInputs.cache
-/home/tuan_anh/Desktop/api/DAL/obj/Debug/net5.0/DAL.AssemblyInfo.cs
-/home/tuan_anh/Desktop/api/DAL/obj/Debug/net5.0/DAL.csproj.CoreCompileInputs.cache
-/home/tuan_anh/Desktop/api/DAL/obj/Debug/net5.0/DAL.csproj.CopyComplete
-/home/tuan_anh/Desktop/api/DAL/obj/Debug/net5.0/DAL.dll
-/home/tuan_anh/Desktop/api/DAL/obj/Debug/net5.0/ref/DAL.dll
-/home/tuan_anh/Desktop/api/DAL/obj/Debug/net5.0/DAL.pdb
-/home/tuan/Desktop/api/DAL/bin/Debug/net5.0/DAL.deps.json
-/home/tuan/Desktop/api/DAL/bin/Debug/net5.0/DAL.dll
-/home/tuan/Desktop/api/DAL/bin/Debug/net5.0/ref/DAL.dll
-/home/tuan/Desktop/api/DAL/bin/Debug/net5.0/DAL.pdb
-/home/tuan/Desktop/api/DAL/bin/Debug/net5.0/Models.dll
-/home/tuan/Desktop/api/DAL/bin/Debug/net5.0/Models.pdb
-/home/tuan/Desktop/api/DAL/obj/Debug/net5.0/DAL.csprojAssemblyReference.cache
-/home/tuan/Desktop/api/DAL/obj/Debug/net5.0/DAL.GeneratedMSBuildEditorConfig.editorconfig
-/home/tuan/Desktop/api/DAL/obj/Debug/net5.0/DAL.AssemblyInfoInputs.cache
-/home/tuan/Desktop/api/DAL/obj/Debug/net5.0/DAL.AssemblyInfo.cs
-/home/tuan/Desktop/api/DAL/obj/Debug/net5.0/DAL.csproj.CoreCompileInputs.cache
-/home/tuan/Desktop/api/DAL/obj/Debug/net5.0/DAL.csproj.CopyComplete
-/home/tuan/Desktop/api/DAL/obj/Debug/net5.0/DAL.dll
-/home/tuan/Desktop/api/DAL/obj/Debug/net5.0/ref/DAL.dll
-/home/tuan/Desktop/api/DAL/obj/Debug/net5.0/DAL.pdb
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/bin/Debug/net5.0/DAL.deps.json
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/bin/Debug/net5.0/DAL.dll
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/bin/Debug/net5.0/ref/DAL.dll
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/bin/Debug/net5.0/DAL.pdb
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/bin/Debug/net5.0/Models.dll
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/bin/Debug/net5.0/Models.pdb
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/obj/Debug/net5.0/DAL.csprojAssemblyReference.cache
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/obj/Debug/net5.0/DAL.GeneratedMSBuildEditorConfig.editorconfig
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/obj/Debug/net5.0/DAL.AssemblyInfoInputs.cache
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/obj/Debug/net5.0/DAL.AssemblyInfo.cs
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/obj/Debug/net5.0/DAL.csproj.CoreCompileInputs.cache
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/obj/Debug/net5.0/DAL.csproj.CopyComplete
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/obj/Debug/net5.0/DAL.dll
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/obj/Debug/net5.0/ref/DAL.dll
-/home/tuan/Màn hình nền/bigProjectApi-main/DAL/obj/Debug/net5.0/DAL.pdb
-/home/tuan/Màn hình nền/api/DAL/bin/Debug/net5.0/DAL.deps.json
-/home/tuan/Màn hình nền/api/DAL/bin/Debug/net5.0/DAL.dll
-/home/tuan/Màn hình nền/api/DAL/bin/Debug/net5.0/ref/DAL.dll
-/home/tuan/Màn hình nền/api/DAL/bin/Debug/net5.0/DAL.pdb
-/home/tuan/Màn hình nền/api/DAL/bin/Debug/net5.0/Models.dll
-/home/tuan/Màn hình nền/api/DAL/bin/Debug/net5.0/Models.pdb
-/home/tuan/Màn hình nền/api/DAL/obj/Debug/net5.0/DAL.GeneratedMSBuildEditorConfig.editorconfig
-/home/tuan/Màn hình nền/api/DAL/obj/Debug/net5.0/DAL.AssemblyInfoInputs.cache
-/home/tuan/Màn hình nền/api/DAL/obj/Debug/net5.0/DAL.AssemblyInfo.cs
-/home/tuan/Màn hình nền/api/DAL/obj/Debug/net5.0/DAL.csproj.CoreCompileInputs.cache
-/home/tuan/Màn hình nền/api/DAL/obj/Debug/net5.0/DAL.csproj.CopyComplete
-/home/tuan/Màn hình nền/api/DAL/obj/Debug/net5.0/DAL.dll
-/home/tuan/Màn hình nền/api/DAL/obj/Debug/net5.0/ref/DAL.dll
-/home/tuan/Màn hình nền/api/DAL/obj/Debug/net5.0/DAL.pdb
-/home/tuan/Màn hình nền/api/DAL/obj/Debug/net5.0/DAL.csproj.AssemblyReference.cache
-/home/tuan/Màn hình nền/bigProjectApi/DAL/bin/Debug/net5.0/DAL.deps.json
-/home/tuan/Màn hình nền/bigProjectApi/DAL/bin/Debug/net5.0/DAL.dll
-/home/tuan/Màn hình nền/bigProjectApi/DAL/bin/Debug/net5.0/ref/DAL.dll
-/home/tuan/Màn hình nền/bigProjectApi/DAL/bin/Debug/net5.0/DAL.pdb
-/home/tuan/Màn hình nền/bigProjectApi/DAL/bin/Debug/net5.0/Models.dll
-/home/tuan/Màn hình nền/bigProjectApi/DAL/bin/Debug/net5.0/Models.pdb
-/home/tuan/Màn hình nền/bigProjectApi/DAL/obj/Debug/net5.0/DAL.csproj.AssemblyReference.cache
-/home/tuan/Màn hình nền/bigProjectApi/DAL/obj/Debug/net5.0/DAL.GeneratedMSBuildEditorConfig.editorconfig
-/home/tuan/Màn hình nền/bigProjectApi/DAL/obj/Debug/net5.0/DAL.AssemblyInfoInputs.cache
-/home/tuan/Màn hình nền/bigProjectApi/DAL/obj/Debug/net5.0/DAL.AssemblyInfo.cs
-/home/tuan/Màn hình nền/bigProjectApi/DAL/obj/Debug/net5.0/DAL.csproj.CoreCompileInputs.cache
-/home/tuan/Màn hình nền/bigProjectApi/DAL/obj/Debug/net5.0/DAL.csproj.CopyComplete
-/home/tuan/Màn hình nền/bigProjectApi/DAL/obj/Debug/net5.0/DAL.dll
-/home/tuan/Màn hình nền/bigProjectApi/DAL/obj/Debug/net5.0/ref/DAL.dll
-/home/tuan/Màn hình nền/bigProjectApi/DAL/obj/Debug/net5.0/DAL.pdb
-C:\Users\welcome\Desktop\bigProjectApi\DAL\bin\Debug\net5.0\DAL.deps.json
-C:\Users\welcome\Desktop\bigProjectApi\DAL\bin\Debug\net5.0\DAL.dll
-C:\Users\welcome\Desktop\bigProjectApi\DAL\bin\Debug\net5.0\ref\DAL.dll
-C:\Users\welcome\Desktop\bigProjectApi\DAL\bin\Debug\net5.0\DAL.pdb
-C:\Users\welcome\Desktop\bigProjectApi\DAL\bin\Debug\net5.0\Models.dll
-C:\Users\welcome\Desktop\bigProjectApi\DAL\bin\Debug\net5.0\Models.pdb
-C:\Users\welcome\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.csprojAssemblyReference.cache
-C:\Users\welcome\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\welcome\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
-C:\Users\welcome\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
-C:\Users\welcome\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
-C:\Users\welcome\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
-C:\Users\welcome\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.dll
-C:\Users\welcome\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\ref\DAL.dll
-C:\Users\welcome\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.pdb
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\bin\Debug\net5.0\DAL.deps.json
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\bin\Debug\net5.0\DAL.dll
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\bin\Debug\net5.0\ref\DAL.dll
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\bin\Debug\net5.0\DAL.pdb
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\bin\Debug\net5.0\Models.dll
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\bin\Debug\net5.0\Models.pdb
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.csproj.AssemblyReference.cache
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.dll
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\ref\DAL.dll
+C:\Users\tuan anh\Desktop\bigProjectApi\DAL\obj\Debug\net5.0\DAL.pdb
