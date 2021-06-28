@@ -205,60 +205,67 @@ Cart.initJQuery = function() {
 
 Cart.checkout =function()
 {
-
-  var $adr=$("#adresst").val();
-  var phone=$("#phone").val();
-  var name=$("#name").val();
-  if($adr.trim()==""||phone.trim()==""||name.trim()=="")
+  if(Cart.items.length!=0)
   {
-    toastr.error("vui lòng nhập đầy đủ thông tin")
-  }
-  else{
-    var data={
-    "Address":$adr,
-    "Phone":phone,
-    "Order_Name":name,
-    "total":Cart.subTotal()
-    }
-    console.log(data);
-    $.ajax({
-      type: "POST",
-      url: "https://localhost:5001/user/create-order",
-      data: data,
-      dataType: "json",
-      success: function(data)
-      { 
-        var model=[];
-        Cart.items.forEach(element => {
-           model.push(element)
-        });
-        console.log(JSON.stringify(model))
+      
+      var $adr=$("#adresst").val();
+      var phone=$("#phone").val();
+      var name=$("#name").val();
+      if($adr.trim()==""||phone.trim()==""||name.trim()=="")
+      {
+        toastr.error("vui lòng nhập đầy đủ thông tin")
+      }
+      else{
+        var data={
+        "Address":$adr,
+        "Phone":phone,
+        "Order_Name":name,
+        "total":Cart.subTotal()
+        }
+        console.log(data);
         $.ajax({
           type: "POST",
-          url: "https://localhost:5001/user/order-detail-insert",
-          data: JSON.stringify(model),
+          url: "https://localhost:5001/user/create-order",
+          data: data,
           dataType: "json",
-          contentType: 'application/json; charset=utf-8',
           success: function(data)
           { 
-              Cart.empty();
-              window.location.href="index.html";
+            var model=[];
+            Cart.items.forEach(element => {
+              model.push(element)
+            });
+            console.log(JSON.stringify(model))
+            $.ajax({
+              type: "POST",
+              url: "https://localhost:5001/user/order-detail-insert",
+              data: JSON.stringify(model),
+              dataType: "json",
+              contentType: 'application/json; charset=utf-8',
+              success: function(data)
+              { 
+                  Cart.empty();
+                  window.location.href="index.html";
+              },
+              error : function (e){      
+                  console.log(e)
+              
+              }
+              })
+
+              // Cart.empty();
+              // window.location.href="/index.html";
           },
           error : function (e){      
               console.log(e)
           
           }
-          })
+      })
 
-          // Cart.empty();
-          // window.location.href="/index.html";
-      },
-      error : function (e){      
-          console.log(e)
-      
       }
-  })
-
+  }
+  else
+  {
+    toastr.error("Giỏ hàng của bạn trống");
   }
   
 }

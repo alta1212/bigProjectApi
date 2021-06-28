@@ -1,6 +1,32 @@
 $(document).ready(function() {
     "use strict";
 
+    //puscher
+
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('0c74ee77eb82bc0b814a', {
+      cluster: 'ap3'
+    });
+
+    var channel = pusher.subscribe('anhlatuananh');
+    channel.bind('Neworder', function(data) {
+        toastr.info("You have new order")
+      var ht=' <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">\
+      <div class="d-flex w-100 justify-content-between">\
+          <h5 class="mb-1">You have new order</h5>\
+          <small>Just now</small>\
+      </div>\
+      <p class="mb-1">Name :'+ data.message.Order_Name+' </p>\
+      <p class="mb-1">Address :'+ data.message.Address+' </p>\
+      <p class="mb-1">Phone :'+ data.message.Phone+' </p>\
+      <small>Total : '+ data.message.total+'$</small>\
+      </a>';
+      $("#noti").append(ht)
+
+    });
+
+
     $(".ho-dr-con-last.waves-effect").click(function(){
         localStorage.removeItem("token");
         window.location.reload()

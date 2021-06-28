@@ -49,12 +49,18 @@
                     <a href="#"><i class="fa fa-search"></i></a>
                 </form>
             </div>
+
+
+                            <div id="noti" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade list-group">
+                               
+                            </div>
+                   
+                   
+
             <!--== NOTIFICATION ==-->
             <div class="col-md-2 tab-hide">
                 <div class="top-not-cen">
-                    <a class='waves-effect btn-noti' href='#'><i class="fa fa-commenting-o" aria-hidden="true"></i><span>5</span></a>
-                    <a class='waves-effect btn-noti' href='#'><i class="fa fa-envelope-o" aria-hidden="true"></i><span>5</span></a>
-                    <a class='waves-effect btn-noti' href='#'><i class="fa fa-tag" aria-hidden="true"></i><span>5</span></a>
+                    <a   class='waves-effect btn-noti' data-toggle="modal" data-target="#noti"><i class="fa fa-envelope-o" aria-hidden="true"></i><span></span></a>
                 </div>
             </div>
             <!--== MY ACCCOUNT ==-->
@@ -1090,9 +1096,14 @@
     </section>
 
     <!--======== SCRIPT FILES =========-->
+
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
     <script src="js/custom.js"></script>
 </body>
 

@@ -12,7 +12,7 @@ namespace main.Controllers
     public class webSocketController {
         string chanel ="anhlatuananh";
         string Event="Neworder";
-        public async Task<ActionResult> webSocket(Models.order model) {
+        public async Task<ActionResult> webSocket(object obj) {
             var options = new PusherOptions
             {
             Cluster = "ap3",
@@ -28,7 +28,7 @@ namespace main.Controllers
             var result = await pusher.TriggerAsync(
             chanel,
             Event,
-            new { message = model} );
+            new { message = obj} );
 
             return null;
         }
