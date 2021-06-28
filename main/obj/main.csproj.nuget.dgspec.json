@@ -195,6 +195,10 @@
               "target": "Package",
               "version": "[6.11.1, )"
             },
+            "PusherServer": {
+              "target": "Package",
+              "version": "[4.6.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"

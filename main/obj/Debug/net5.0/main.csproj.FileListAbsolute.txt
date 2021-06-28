@@ -54,3 +54,5 @@ C:\Users\tuan anh\Desktop\bigProjectApi\main\obj\Debug\net5.0\main.dll
 C:\Users\tuan anh\Desktop\bigProjectApi\main\obj\Debug\net5.0\ref\main.dll
 C:\Users\tuan anh\Desktop\bigProjectApi\main\obj\Debug\net5.0\main.pdb
 C:\Users\tuan anh\Desktop\bigProjectApi\main\obj\Debug\net5.0\main.genruntimeconfig.cache
+C:\Users\tuan anh\Desktop\bigProjectApi\main\bin\Debug\net5.0\NaCl.dll
+C:\Users\tuan anh\Desktop\bigProjectApi\main\bin\Debug\net5.0\PusherServer.dll

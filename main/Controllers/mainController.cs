@@ -10,15 +10,18 @@ using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
+using main.Controllers;
 
 namespace main.Controllers
 {
 
     [ApiController]
     [Route("[controller]")]
+    
    
     public class productController : ControllerBase
     {
+   
         private IproductBUS _productBusiness;
         
         public productController(IproductBUS proBusiness)
@@ -36,6 +39,7 @@ namespace main.Controllers
         [HttpGet]
         public IEnumerable<Models.Product> GetAll()
         {
+         
             return _productBusiness.Getproduct();
         }
         [Authorize] 
@@ -168,7 +172,8 @@ namespace main.Controllers
     [Route("[controller]")]
    
     public class userController : ControllerBase
-    {
+    {   
+        webSocketController socket = new webSocketController();
         private IuserBUS _userBusiness;
         
         public userController(IuserBUS proBusiness)
@@ -187,6 +192,8 @@ namespace main.Controllers
         public order CreateItem([FromForm] order model)
         {
             _userBusiness.Createorder(model);
+            System.Threading.Tasks.Task<ActionResult> task = socket.webSocket(model);
+       
             return model;
         } 
         [Route("order-detail-insert")]
