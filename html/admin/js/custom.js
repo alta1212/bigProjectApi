@@ -1,8 +1,17 @@
 $(document).ready(function() {
     "use strict";
-
+    $('.modal').modal({
+        dismissible: true
+    });
+    
+   
+   
     //puscher
-
+    toastr.options = {
+        "timeOut": "5000",
+        "progressBar": true,
+        "onclick": function(e) { $('#noti').modal('open'); }
+    }
     Pusher.logToConsole = true;
 
     var pusher = new Pusher('0c74ee77eb82bc0b814a', {
@@ -11,8 +20,8 @@ $(document).ready(function() {
 
     var channel = pusher.subscribe('anhlatuananh');
     channel.bind('Neworder', function(data) {
-        toastr.info("You have new order")
-      var ht=' <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">\
+        toastr["info"](' <span>You have new order click this <br> dialog for detail</span>')
+      var ht=' <a href="order-all.html" class="list-group-item list-group-item-action flex-column align-items-start ">\
       <div class="d-flex w-100 justify-content-between">\
           <h5 class="mb-1">You have new order</h5>\
           <small>Just now</small>\
