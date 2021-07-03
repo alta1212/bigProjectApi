@@ -219,9 +219,12 @@
     <script src="js/jquery.min.js"></script>
     <script>
          var link="https://localhost:5001/";
-
-         var dd="";
+getmenu();
+        var dd="";
     var html="";
+    function getmenu(){
+
+  
         $.ajax({
         type: "get",  
         url: "https://localhost:5001/Categories/get-Category",
@@ -250,14 +253,15 @@
 
             $("#type").html(html)
             console.log(html)
-           
+            $('select').material_select();
+            html="";
         },
         error : function (e){      
             console.log(e)
         }
     })
 
-
+    }
     function childmenu(data,j)
     {  
         var idChildMenu=[];
@@ -331,6 +335,7 @@
                         toastr.success("Thêm Thành Công")
                         $("#submitBnt").html('<input type="submit" class="waves-effect waves-light btn-large">');
                         $("#editCategory").trigger("reset");
+                        getmenu();
                     },
                     error : function (e){      
                         console.log(e)
