@@ -106,6 +106,7 @@ namespace BUS
             
         //     return lstChilds.ToList();
         // }
+      
          public bool Create(Categories model)
         {
             return _res.Create(model);
@@ -136,7 +137,10 @@ namespace BUS
         {
             _res = News;       
         }
-
+        public List<order> getallordeuser(string phone)
+        {
+            return _res.getallordeuser(phone);
+        }
         public bool Createorder(order model)
         {
             return _res.Createorder(model);

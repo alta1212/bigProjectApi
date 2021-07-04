@@ -234,50 +234,116 @@
     <script src="js/jquery.min.js"></script>
     <script>
         var link="https://localhost:5001/";
-        function getProductPage(page)
-        {   $(".page-item").removeClass("active")
-            $.ajax({
-            type: "get",  
-            url: "https://localhost:5001/Categories/get-Category",
-        
-        
-            success: function(data)
-            {   
-                var html="";
-                console.log(data)
-                for(var i=1;i<data.length+1;i++)
-                {   
-                  
-                    html+='<tr>\
+        var dd="";
+        var html=""; var i=0;
+        function createHtml(name,type,id)
+        {
+            i++
+            html+='<tr>\
                                         <td><a href="#">\
                                             <span class="list-enq-name ggggg">'+i+'</span></a>\
+                                                    </td>'
+                                                    if(type=="root")
+                                                    html+=   '<td><a href="#"><span class="list-enq-name">'+name+'</span></a>\
+                                                    </td>'
+                                                    else
+                                                    html+=   '<td><ahref="#"><span style="color: #0a0f1185;"  class="list-enq-name">'+name+'</span></a>\
+                                                    </td>'
+                                                    html+='<td>\
+                                                        <a target="_blank" href="category-edit.html?productid='+id+'"><i class="fa fa-eye" aria-hidden="true"></i></a>\
                                                     </td>\
-                                                    <td><a href="#"><span class="list-enq-name">'+data[i-1].category_Name+'</span></a>\
-                                                    </td>\
-                                                    \
                                                     <td>\
-                                                        <a target="_blank" href="category-edit.html?productid='+data[i-1].category_ID+'"><i class="fa fa-eye" aria-hidden="true"></i></a>\
+                                                        <a  target="_blank" href="category-edit.html?productid='+id+'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>\
                                                     </td>\
                                                     <td>\
-                                                        <a  target="_blank" href="category-edit.html?productid='+data[i-1].category_ID+'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>\
-                                                    </td>\
-                                                    <td>\
-                                                        <a onclick="deletecategory('+data[i-1].category_ID+')" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>\
+                                                        <a onclick="deletecategory('+id+')" href="#"><i class="fa fa-trash-o" aria-hidden="true"></i></a>\
                                                     </td>\
                                                 </tr>'
                 
-                }
+        };
+      
 
-                $("#listCategory").html(html);
+            $.ajax({
+            type: "get",  
+            url: "https://localhost:5001/Categories/get-Category",
+
+
+            success: function(data)
+            {   
+            
+                console.log(data)
+            
+                // html+="<option value='0'>Root</option>";
+                for(var i =0;i<data.length;i++)
+                { 
+                    
+                    if(data[i].parentid==0)
+                    {
+                        // html+="<li>";
+                        // html+=data[i].category_Name;
+                        // html+="</li>";
+                        createHtml(data[i].category_Name,'root',data[i].category_ID)
+                    childmenu(data,data[i].category_ID);
+                    
+                    }
+                
+                }
+            
+
+                $("#listCategory").html(html)
+                console.log(html)
+            
             },
             error : function (e){      
                 console.log(e)
-            
             }
         })
-        }
-        getProductPage(1);
 
+
+        function childmenu(data,j)
+        {  
+            var idChildMenu=[];
+            var nameChildMenu=[];
+        
+        
+                for(var i =0;i<data.length;i++)
+                {  
+                    if(data[i].parentid==j)
+                    {
+                    
+                        idChildMenu.push(data[i].category_ID);
+                        nameChildMenu.push(data[i].category_Name);
+                    
+                    
+                    }
+                
+                
+                }
+            
+                if(idChildMenu.length>0)
+                {
+                    
+                
+                    for(var k=0;k<idChildMenu.length;k++)
+                    {   dd+="---";
+                        // html+="<li ><a href='type.html?id="+idChildMenu[k]+"'>"; //Bắt đầu một dòng menu con với thẻ <li>
+                        // html+=dd;
+                        // html+=nameChildMenu[k];
+                        createHtml(dd+nameChildMenu[k],'child',idChildMenu[k])
+                        //Đệ quy, gọi lại chính hàm CreateChildMenu với tham số là idChildMenu hiện tại.
+                        childmenu(data,idChildMenu[k]);
+                      //  html+="</a></li>";
+                    
+                    }
+                
+                }
+                else
+                {
+                    dd="";
+                }
+                
+                
+        }
         function deletecategory(id)
          {
             $.ajax({

@@ -41,6 +41,7 @@ namespace BUS.Interface
         // bool delete(string id);
         List<order> getallorder();
          List<OrderDetails> getallorderdetail(string id);
+         List<order> getallordeuser(string phone);
     }
     public partial interface IadminBUS
     {

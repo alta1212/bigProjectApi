@@ -266,19 +266,19 @@
                
                if(data[i].parentid==0)
                {
-                   html+="<option disabled value='"+data[i].category_ID+"'>";
+                   html+="<option  value='"+data[i].category_ID+"'>";
                    html+=data[i].category_Name;
                    html+="</option>";
                   childmenu(data,data[i].category_ID);
                  
-
+                
                }
               
            }
            html+="</select>";
-           $('select').material_select();
-           $("#type").html(html)
           
+           $("#type").html(html)
+           $('select').material_select();
           
        },
        error : function (e){      
@@ -373,7 +373,7 @@
                    },
                    error : function (e){      
                        console.log(e)
-                   
+                       toastr.success("Có lỗi xảy ra vui lòng thử lại")
                    }
                })
            })

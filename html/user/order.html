@@ -89,36 +89,30 @@
             <span>Shop</span> /
             <span>Beff Big Burger</span>
           </div> 
-          <h1>Cart Page</h1>
+          <h1>Order Page</h1>
         </div>
       </div>
     </div>    
   </div>   
  </header>
  <main>
-    <div class="alert alert-info cart-is-empty" role="alert">
-        Giỏ hàng của bạn đang trống 
-      </div>
+
  <div class="container overflow-hidden-small">
    <div class="row p-0">
 	   <div class="col-lg-12 p-0">
-			<table class="table table-responsive-md cart-line-items">
+			<table id="orderlist" class="table table-responsive-md ">
                 <thead>
                     <tr>
-                        <th class="itemwidth">Item</th>
-                        <th>Price</th>
-                        <th class="quantitywidth">Quantity</th>
-                        <th>Subtotal</th>
+                        <th class="itemwidth">Tên khách hàng</th>
+                        <th>Ngày đặt</th>
+                        <th >Số điện thoại</th>
+                        <th>Địa chỉ giao hàng</th>
+                        <th>Tổng tiền</th>
                         <th class="text-right"></th>
                     </tr>
-                    </thead>
+                </thead>
+              
 			</table>
-      <div class="row mb-2">
-        <div class="col text-right">
-          <a href="#" onclick="Cart.empty();" class="custom-button3 mr-4 mb-1">Clear Cart</a>		
-				  <a href="#" class="custom-button1 ml-5">Update Cart</a>  
-				</div>
-      </div>
       </div>
     </div>
     <div class="row cart-subtotal pb-2">
@@ -131,25 +125,7 @@
       </div> 
       <div class="col-md-1">
       </div>      
-      <div class="col-md-6">
-        <h4>SHIPPING</h4> 
-        <input type="text" id="adresst" class="form-control" placeholder="Địa chỉ">
-        <input type="text" id="name" class="form-control" placeholder="Họ và tên">
-        <input type="text" id="phone" class="form-control" placeholder="Số điện thoại">
-        <div class="row">
-          <div class="col-12 mt-1 mb-3 text-right">
-            <a href="#" onclick="Cart.checkout()" class="custom-button2">Buy now</a>  
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-5">
-          </div>
-          <div class="cart-subtotal-inner col-sm-7">
-            <h5>SUBTOTAL<span class="cart-subtotal_l">$38</span></h5>
-            
-          </div>
-        </div> 
-      </div>  
+     
     </div>
   </div>
   </main>
@@ -212,5 +188,51 @@
   <script src="js/script.js"></script>
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+  <script>
+     var id = location.search.slice(1).split("&")[0].split("=")[1];
+     $.ajax({
+       method:"get",
+       url:"https://localhost:5001/user/allorderbyphone/"+id,
+       success:function(s){
+         console.log(s)
+          var html="";
+          for (let index = 0; index < s.length; index++) {
+            const element = s[index];
+            html+='<tbody>\
+              <tr>\
+                <td>\
+                  <div class="row align-items-center">\
+                    <div >\
+                      <a>'+element.order_Name+'</a>\
+                    </div>\
+                  </div>\
+                </td>\
+                <td> \
+                  <a>'+element.createdDate+'</a>\
+                </td>\
+                <td> \
+                  <a>'+element.phone+'</a>\
+                </td>\
+                <td>								\
+                <div >\
+                  <a>'+element.address+'</a>\
+                </div>\
+                </td>\
+                <td>\
+                  <a>'+element.total+'$</a>\
+                </td>\
+                <td class="text-right">\
+                  <button><img style="    max-width: 2rem;" src="images/eye.png" alt="close"/></button>								\
+                </td>\
+              </tr>				  \
+            </tbody>'
+          }
+          $("#orderlist").html($("#orderlist").html()+html);
+       },
+       error:function (params) {
+         console.log(params)
+       }
+     })
+  </script>
   </body>
 </html>

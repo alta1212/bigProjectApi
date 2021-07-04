@@ -230,7 +230,7 @@ var html="";
             
             if(data[i].parentid==0)
             {
-                html+="<li>";
+                html+="<li><a href='type.html?id="+data[i].category_ID+"'>";
                 html+=data[i].category_Name;
                 html+="</li>";
                childmenu(data,data[i].category_ID);

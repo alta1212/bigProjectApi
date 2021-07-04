@@ -399,7 +399,9 @@
             $.ajax({
             type: "get",  
             url: link+"product/delete/"+id,
-        
+            headers: {
+                        Authorization: 'Bearer '+localStorage.getItem("token")
+                    },
         
             success: function(data)
             {   

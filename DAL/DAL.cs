@@ -352,6 +352,23 @@ namespace DAL
                 throw ex;
             }
         }
+
+        public List<order> getallordeuser(string phone)
+        {
+             string msgError = "";
+            try
+            {
+                 var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "getorderuser",
+                 "@phone",phone);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<order>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
     public class adminRepository:IadminDAL
     {

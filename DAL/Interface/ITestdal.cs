@@ -38,6 +38,7 @@ namespace DAL.Interface
 
                List<order> getallorder();
                List<OrderDetails> getallorderdetail(string id);
+               List<order> getallordeuser(string phone);
         }   
         public interface IadminDAL
         {
