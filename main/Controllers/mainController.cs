@@ -226,7 +226,14 @@ namespace main.Controllers
 
        
 
+        [Route("allorderbyphone/{phone}")]
+        [HttpGet]
+        public List<order> getallorderbyphone(string phone)
+        {
 
+           
+            return  _userBusiness.getallordeuser(phone);;
+        }
 
  
 
